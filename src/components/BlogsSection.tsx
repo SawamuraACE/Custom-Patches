@@ -1,12 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/Button";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper modules
+import { Pagination } from "swiper/modules";
+
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -38,14 +42,11 @@ const BLOGS = [
 ];
 
 export function BlogsSection() {
-  const [isMounted, setIsMounted] = useState(false);
-  const swiperRef = useRef<SwiperType | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setMounted(true);
   }, []);
-
-  if (!isMounted) return null;
 
   return (
     <section className="bg-white pt-6 pb-16 md:py-24">
@@ -60,18 +61,14 @@ export function BlogsSection() {
           </p>
         </div>
 
-        <div className="relative">
+        {mounted && (
+        <div className="relative" suppressHydrationWarning>
           <Swiper
             modules={[Pagination]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
             spaceBetween={24}
             slidesPerView={1.2}
-            watchSlidesProgress={false}
-            preventInteractionOnTransition={true}
-            touchReleaseOnEdges={true}
-            resistanceRatio={0.85}
+            loop={false}
+            speed={600}
             pagination={{
               clickable: true,
               dynamicBullets: true,
@@ -127,6 +124,7 @@ export function BlogsSection() {
             }
           `}</style>
         </div>
+        )}
 
       </div>
     </section>
