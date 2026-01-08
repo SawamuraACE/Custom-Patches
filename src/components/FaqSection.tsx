@@ -34,9 +34,9 @@ export function FaqSection() {
   };
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pt-12 pb-6 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <h2 className="text-center text-3xl font-extrabold text-brand-dark mb-12 uppercase tracking-wide">
+        <h2 className="text-center text-2xl md:text-3xl font-extrabold text-brand-dark mb-8 md:mb-12 uppercase tracking-wide">
           FREQUENTLY ASKED QUESTIONS
         </h2>
 

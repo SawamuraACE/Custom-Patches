@@ -53,4 +53,28 @@
     0%, 100% { opacity: 0; transform: translateX(0); }
     50% { opacity: 1; transform: translateX(4px); }
   }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #E91E63 0%, #FF8C00 100%);
+    border: 2px solid #0a0a0a;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Hide scrollbars on specific elements while keeping page scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

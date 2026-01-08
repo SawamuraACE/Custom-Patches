@@ -1,71 +1,133 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { Button } from "./ui/Button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const BLOGS = [
   {
     id: 1,
     title: "Custom Patches for Businesses & Personal Use",
-    desc: "Custom patches are an incredible way to make a statement and add personal flair to clothing, hats, bags, and more. Whether for branding or style, they stand out.",
+    desc: "Custom patches are an incredible way to make a statement and add personal flair to clothing, hats, bags, and more.",
     image: "/assets/blog-1.png",
   },
   {
     id: 2,
     title: "The Ultimate Guide to Custom Patch Backings",
-    desc: "From Iron-on to Velcro, choosing the right backing is crucial for your patch's longevity and application. Learn which one fits your needs best.",
+    desc: "From Iron-on to Velcro, choosing the right backing is crucial for your patch's longevity and application.",
+    image: "/assets/blog-2.png",
+  },
+  {
+    id: 3,
+    title: "Why Embroidery is Timeless",
+    desc: "Explore the history and durability of classic embroidery methods compared to modern printing.",
+    image: "/assets/blog-1.png",
+  },
+  {
+    id: 4,
+    title: "PVC vs Embroidered: Which is Best?",
+    desc: "A deep dive into the pros and cons of different patch materials for outdoor gear.",
     image: "/assets/blog-2.png",
   },
 ];
 
 export function BlogsSection() {
+  const [isMounted, setIsMounted] = useState(false);
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pt-6 pb-16 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-4xl font-extrabold text-brand-dark mb-16 uppercase tracking-wide">
-          BLOGS
-        </h2>
 
-        <div className="flex items-center justify-center gap-4 md:gap-8">
-          {/* Left Arrow */}
-          <button className="hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md border border-gray-100 hover:bg-gray-50 text-gray-600">
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl w-full">
-            {BLOGS.map((blog) => (
-              <div
-                key={blog.id}
-                className="group flex flex-col rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 bg-white"
-              >
-                <div className="h-96 w-full relative flex items-center justify-center bg-white">
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-8 bg-[#1A1A1A] text-white flex-1 flex flex-col items-start">
-                  <h3 className="text-2xl font-bold mb-4 leading-tight">{blog.title}</h3>
-                  <p className="text-gray-400 text-base leading-relaxed mb-6 line-clamp-4">
-                    {blog.desc}
-                  </p>
-
-                  <Button className="mt-auto bg-white hover:bg-brand-orange text-black hover:text-white border-2 border-white px-8 py-3 rounded-md text-sm font-bold uppercase">
-                    Read More
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right Arrow */}
-          <button className="hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md border border-gray-100 hover:bg-gray-50 text-gray-600">
-            <ChevronRight className="h-6 w-6" />
-          </button>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4 uppercase tracking-wide">
+            BLOGS
+          </h2>
+          <p className="text-gray-500 text-sm md:text-base">
+            Latest news and guides from the patch experts.
+          </p>
         </div>
+
+        <div className="relative">
+          <Swiper
+            modules={[Pagination]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            spaceBetween={24}
+            slidesPerView={1.2}
+            watchSlidesProgress={false}
+            preventInteractionOnTransition={true}
+            touchReleaseOnEdges={true}
+            resistanceRatio={0.85}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            breakpoints={{
+              320: { slidesPerView: 1.1, spaceBetween: 16 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 2.5, spaceBetween: 30 },
+            }}
+            className="w-full pb-12"
+          >
+            {BLOGS.map((blog) => (
+              <SwiperSlide key={blog.id} className="h-auto">
+                <div className="group flex flex-col h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white">
+
+                  <div className="h-48 md:h-64 w-full relative overflow-hidden bg-gray-100">
+                     <Image
+                       src={blog.image}
+                       alt={blog.title}
+                       fill
+                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                       unoptimized
+                     />
+                  </div>
+
+                  <div className="p-6 md:p-8 bg-[#1A1A1A] text-white flex-1 flex flex-col items-start justify-between">
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold mb-3 leading-tight line-clamp-2">
+                        {blog.title}
+                      </h3>
+                      <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3">
+                        {blog.desc}
+                      </p>
+                    </div>
+
+                    <Button className="bg-brand-orange hover:bg-brand-red text-white border-none px-6 rounded-md text-xs font-bold uppercase w-max">
+                      Read More
+                    </Button>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <style jsx global>{`
+            .swiper-pagination-bullet-active {
+              background-color: #FF4D15 !important;
+            }
+            .swiper-pagination-bullet {
+              background-color: #ccc;
+              width: 10px;
+              height: 10px;
+            }
+          `}</style>
+        </div>
+
       </div>
     </section>
   );

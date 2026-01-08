@@ -64,7 +64,7 @@ const PRODUCTS = [
 
 export function ProductsGrid() {
   return (
-    <section className="bg-white py-24 overflow-hidden">
+    <section className="bg-white pt-6 pb-24 md:py-24 overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20 space-y-4">

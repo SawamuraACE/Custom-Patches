@@ -151,13 +151,10 @@ export function SpecialRates() {
           <div className="w-full lg:w-1/2 py-24 px-8 flex flex-col items-center justify-center text-center relative">
             <div className="relative w-[131px] h-[120px] mb-6 animate-float">
               <img 
-                src="/assets/instant-quote-envelope.png" 
-                alt="Envelope" 
-                className="w-full h-full object-contain drop-shadow-xl"
-              />
-              <div className="absolute -top-2 -left-2 bg-brand-red text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
-                1
-              </div>
+                 src="/assets/instant-quote-envelope.png" 
+                 alt="Envelope" 
+                 className="w-full h-full object-contain drop-shadow-xl"
+               />
             </div>
 
             <h2 className="text-5xl font-extrabold text-brand-dark leading-tight mb-6">
@@ -189,12 +186,12 @@ export function SpecialRates() {
   }
 
   return (
-    <section className="relative bg-white w-full overflow-hidden">
+    <section className="relative bg-white w-full overflow-hidden py-12 md:py-24">
       
       <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto">
         
         {/* LEFT SIDE: "Instant Quote Available" */}
-        <div className="w-full lg:w-1/2 py-24 px-8 flex flex-col items-center justify-center text-center relative">
+        <div className="w-full lg:w-1/2 px-8 flex flex-col items-center justify-center text-center relative">
           
           {/* Envelope Icon */}
           <div className="relative w-[131px] h-[120px] mb-6 animate-float">
@@ -203,9 +200,6 @@ export function SpecialRates() {
                 alt="Envelope" 
                 className="w-full h-full object-contain drop-shadow-xl"
               />
-             <div className="absolute -top-2 -left-2 bg-brand-red text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
-               1
-             </div>
           </div>
 
           <h2 className="text-5xl font-extrabold text-brand-dark leading-tight mb-6">
@@ -219,7 +213,7 @@ export function SpecialRates() {
 
 
         {/* RIGHT SIDE: The Dark Form */}
-        <div className="w-full lg:w-1/2 bg-[#1A1A1A] p-8 md:p-16 flex flex-col justify-center text-white">
+        <div className="w-full lg:w-1/2 bg-[#1A1A1A] p-8 md:p-16 flex flex-col justify-center text-white hide-scrollbar overflow-y-auto">
             <div className="max-w-xl mx-auto w-full">
                 <div className="mb-8 text-center lg:text-left">
                   <h3 className="text-2xl font-bold uppercase tracking-wider text-white">Unlock Special Rates</h3>
