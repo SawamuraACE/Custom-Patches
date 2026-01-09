@@ -12,7 +12,7 @@ export function BottomCTA({ onOpenQuote }: BottomCTAProps) {
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-wide leading-tight mb-6">
           GET CREATIVE WITH MY CUSTOM <br />
-          PATCHES: START TODAY!
+          PATCHES: <span className="text-brand-orange">START TODAY!</span>
         </h2>
 
         <p className="text-gray-400 text-lg mb-10 font-light">

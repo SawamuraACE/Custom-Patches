@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 
 const STEPS = [
   { id: 1, title: "Image/Sketch", desc: "Share your vision with us – whether it's a sketch, logo, or just an idea.", image: "/assets/step-sketch.png" },

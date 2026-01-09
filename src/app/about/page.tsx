@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Modal } from "@/components/ui/Modal";
+import { QuoteForm } from "@/components/QuoteForm";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -43,9 +46,11 @@ const TEXT_BLOCKS = [
 ];
 
 export default function AboutUs() {
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white font-sans">
-      <Navbar onOpenQuote={() => {}} />
+      <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* 1. HERO SECTION (Updated to Black) */}
       <section className="pt-40 pb-24 text-center bg-[#111] relative overflow-hidden">
@@ -184,6 +189,16 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+      <Modal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)}>
+        <div className="mb-6 text-center">
+          <h2 className="text-2xl font-bold text-brand-dark">Get Your Free Quote</h2>
+          <p className="mt-2 text-sm text-gray-500">
+            Fill out the details below and attach your design.
+          </p>
+        </div>
+        <QuoteForm />
+      </Modal>
 
       <Footer />
     </main>
