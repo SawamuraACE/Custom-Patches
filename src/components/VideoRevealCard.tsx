@@ -38,30 +38,82 @@ export function VideoRevealCard({
     setIsTouchDevice(isTouchDevice());
   }, []);
 
+  // Desktop: Play on hover
   useEffect(() => {
-    if (videoRef.current) {
-      // Desktop: Play on hover
-      if (!isTouchDevice && isHovered) {
-        videoRef.current.currentTime = 0;
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {});
+    if (videoRef.current && !isTouchDevice) {
+      const video = videoRef.current;
+
+      if (isHovered) {
+        // Load video if not loaded yet
+        if (video.readyState < 2) {
+          video.load();
         }
-      } else if (!isTouchDevice && !isHovered) {
-        videoRef.current.pause();
+
+        video.currentTime = 0;
+        video.play().catch((error) => {
+          console.log('Desktop hover play failed:', error);
+        });
+      } else {
+        video.pause();
+        video.currentTime = 0;
       }
     }
   }, [isHovered, isTouchDevice]);
 
   // Mobile: Play on button click
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
+  const handlePlayClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!videoRef.current) return;
+
+    const video = videoRef.current;
+
+    try {
+      // Force load the video if not loaded
+      if (!isVideoLoaded) {
+        video.load();
+
+        // Wait for the video to be ready
+        await new Promise<void>((resolve, reject) => {
+          const onCanPlay = () => {
+            video.removeEventListener('canplay', onCanPlay);
+            video.removeEventListener('error', onError);
+            resolve();
+          };
+
+          const onError = () => {
+            video.removeEventListener('canplay', onCanPlay);
+            video.removeEventListener('error', onError);
+            reject(new Error('Video failed to load'));
+          };
+
+          video.addEventListener('canplay', onCanPlay);
+          video.addEventListener('error', onError);
+
+          // Timeout after 5 seconds
+          setTimeout(() => {
+            video.removeEventListener('canplay', onCanPlay);
+            video.removeEventListener('error', onError);
+            resolve(); // Try to play anyway
+          }, 5000);
+        });
       }
+
+      video.currentTime = 0;
+      video.muted = true;
+
+      await video.play();
       setIsPlaying(true);
+    } catch (error) {
+      console.error('Mobile video play failed:', error);
+    }
+  };
+
+  // Handle video end on mobile
+  const handleVideoEnd = () => {
+    if (isTouchDevice) {
+      setIsPlaying(false);
     }
   };
 
@@ -75,15 +127,16 @@ export function VideoRevealCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* LAYER 1: Video - preload="metadata" for hover functionality */}
+      {/* LAYER 1: Video - preload="auto" for mobile, "metadata" for desktop */}
       <video
         ref={videoRef}
         src={videoSrc}
         loop
         muted
         playsInline
-        preload="metadata"
+        preload={isTouchDevice ? "auto" : "metadata"}
         onLoadedData={() => setIsVideoLoaded(true)}
+        onEnded={handleVideoEnd}
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -91,7 +144,7 @@ export function VideoRevealCard({
       <div
         className={cn(
           "absolute inset-0 z-20 bg-white transition-opacity duration-500",
-          isHovered && isVideoLoaded ? "opacity-0" : "opacity-100"
+          (isHovered && !isTouchDevice) || (isPlaying && isTouchDevice) ? "opacity-0" : "opacity-100"
         )}
       >
         {/* Next.js Image Component - no priority for below-fold */}
@@ -121,10 +174,10 @@ export function VideoRevealCard({
       {isTouchDevice && !isPlaying && (
         <button
           onClick={handlePlayClick}
-          className="absolute inset-0 z-40 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-all duration-300"
+          className="absolute inset-0 z-40 flex items-center justify-center bg-black/20 active:bg-black/40 transition-all duration-300"
         >
           <Play
-            className="w-16 h-16 text-white drop-shadow-lg hover:scale-110 transition-transform"
+            className="w-16 h-16 text-white drop-shadow-lg active:scale-110 transition-transform"
             fill="currentColor"
           />
         </button>

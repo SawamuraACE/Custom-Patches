@@ -105,7 +105,7 @@ export function ProductPageTemplate({
                   Get Instant Quote
                 </Button>
                 <p className="text-xs text-gray-400 mt-3 text-center md:text-left whitespace-nowrap">
-                  No Minimums • Fast Turnaround • Free Shipping
+                  Low Minimums • Fast Turnaround • Free Shipping
                 </p>
               </div>
 
