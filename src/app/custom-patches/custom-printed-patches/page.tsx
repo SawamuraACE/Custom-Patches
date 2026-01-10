@@ -3,43 +3,55 @@ import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate"
 export default function PrintedPatchesPage() {
   return (
     <ProductPageTemplate
+      // --- SEO & HEADER ---
       title="Custom Printed Patches"
-      subtitle="Full Color, Photographic Detail"
-      description="Unlock unlimited creativity with custom printed patches. Using advanced printing technology, we can reproduce any design with photographic accuracy. Perfect for artwork, photographs, and complex multi-color designs that tell your unique story."
-      
+      subtitle="Photo-Realistic. Unlimited Colors. Gradients."
+      description="When your design is too complex for threads, Printed Patches are the answer. Using dye-sublimation technology, we dye the image directly into the fabric molecules. This allows for photographic quality, fading gradients, and infinite colors without adding any weight or texture. The perfect choice for complex artwork, portraits, and detailed logos."
+
+      // --- HERO GALLERY IMAGES ---
       heroImage="/assets/products/printed-hero.png"
       galleryImages={[
         "/assets/products/printed-group.png",
         "/assets/products/printed-back.png",
-        "/assets/products/printed-photo.png"
+        "/assets/products/printed-lifestyle.png"
       ]}
 
+      // --- FEATURES ---
       features={[
-        "Unlimited full-color printing",
-        "Photographic detail and accuracy",
-        "Perfect for artwork and photographs",
-        "Available with rubber backing",
-        "No stitch limit or complexity",
-        "Cost-effective for complex designs"
+        "Photo-realistic quality (perfect for faces/scenery)",
+        "Unlimited colors and smooth gradients included",
+        "Flat, smooth surface (dye-sublimation process)",
+        "Waterproof and machine washable (Image won't crack)",
+        "Capture tiny details that embroidery cannot",
+        "Available with Merrowed (stitched) borders for a classic look"
       ]}
 
+      // --- FAQS ---
       faqs={[
         {
-          q: "Can printed patches show photographs?",
-          a: "Absolutely! Printed patches can reproduce any photograph or artwork with amazing detail and color accuracy."
+          q: "Will the image fade or crack in the wash?",
+          a: "No! Unlike screen printing which sits on top, Dye Sublimation fuses the ink into the fabric fibers. The image is permanent, breathable, and will not crack or peel."
         },
         {
-          q: "Are printed patches durable?",
-          a: "Yes! Our printed patches use weather-resistant inks and durable backing materials designed to last through regular use and washing."
+          q: "Why choose Printed over Woven?",
+          a: "Choose Printed if you have gradients (colors fading into each other) or photographs. Woven patches still use threads, so they can't do smooth gradients. Printed patches have zero limitations on color."
         },
         {
-          q: "What file formats do you accept?",
-          a: "We accept JPG, PNG, PDF, and AI formats. The higher the resolution, the better the print quality."
+          q: "Does it look like a patch or a sticker?",
+          a: "It looks like a high-quality patch! We use high-quality twill fabric and finish it with a classic embroidered 'Merrowed' border, so it still has that premium patch feel, just with a sharper image."
         },
         {
-          q: "Can I use gradients and shading?",
-          a: "Yes! Printed patches are excellent for designs with gradients, shading, and subtle color variations that would be difficult in embroidery."
+          q: "Can I use a photo from my phone?",
+          a: "Yes! As long as the photo is high resolution, we can print it directly onto a patch. This is very popular for memorials, pet portraits, and album covers."
         }
+      ]}
+
+      // --- MASTERPIECES GALLERY ---
+      masterpieceImages={[
+        "/assets/products/printed-master-1.png",
+        "/assets/products/printed-master-2.png",
+        "/assets/products/printed-master-3.png",
+        "/assets/products/printed-master-4.png",
       ]}
     />
   );

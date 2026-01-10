@@ -3,43 +3,55 @@ import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate"
 export default function WovenPatchesPage() {
   return (
     <ProductPageTemplate
+      // --- SEO & HEADER ---
       title="Custom Woven Patches"
-      subtitle="Fine Details, Premium Quality"
-      description="Discover the elegance of custom woven patches. Using interlaced threads to create a smooth, detailed surface, woven patches are perfect for intricate designs, fine text, and photographic details. Ideal for corporate brands, high-end merchandise, and detailed artwork."
-      
+      subtitle="High Detail. Smooth Finish. Modern Look."
+      description="When detail matters, choose Woven. Unlike embroidery which uses thick threads on top of fabric, woven patches stitch thinner threads together to create a seamless, flat surface. This allows for microscopic detail, small text, and complex gradients that would be impossible with embroidery. Perfect for sportswear, airsoft teams, and intricate brand logos."
+
+      // --- HERO GALLERY IMAGES ---
       heroImage="/assets/products/woven-hero.png"
       galleryImages={[
         "/assets/products/woven-group.png",
         "/assets/products/woven-back.png",
-        "/assets/products/woven-logo.png"
+        "/assets/products/woven-lifestyle.png"
       ]}
 
+      // --- FEATURES ---
       features={[
-        "Fine, detailed finish with smooth surface",
-        "Perfect for intricate designs and text",
-        "Up to 12 colors per design",
-        "Premium look and feel",
-        "Available in all backing types",
-        "Ideal for corporate and high-end brands"
+        "Capable of capturing tiny text and fine details",
+        "Smooth, flat surface (no raised texture)",
+        "Thinner and lighter than embroidery (great for sportswear)",
+        "Tighter weave allows for cleaner lines",
+        "Available with Merrowed (stitched) or Laser-cut borders",
+        "Cost-effective for bulk orders"
       ]}
 
+      // --- FAQS ---
       faqs={[
         {
-          q: "What's the difference between woven and embroidered?",
-          a: "Woven patches use interlaced threads creating a smooth surface, while embroidered patches use stitched threads on backing. Woven is better for fine details."
+          q: "Why choose Woven over Embroidered?",
+          a: "Choose Woven if your design has small text (under 3mm), complex details, or gradients. If you want a classic 'puffy' feel, go Embroidered. If you want HD clarity, go Woven."
         },
         {
-          q: "Can woven patches handle small text?",
-          a: "Yes! Woven patches excel at reproducing small text and fine details. Text can be as small as 0.15 inches and still be legible."
+          q: "Are they cheaper than embroidery?",
+          a: "Generally, yes! Woven patches use less material bulk and are faster to produce in high quantities, making them a very cost-effective option for large runs."
         },
         {
-          q: "Are woven patches more expensive?",
-          a: "Woven patches are typically priced between embroidered and printed patches, offering excellent value for detailed designs."
+          q: "What is the standard backing?",
+          a: "Most woven patches come with a smooth plastic backing for stability, or an Iron-on backing for easy application. Velcro is also very popular for tactical gear."
         },
         {
-          q: "How many colors can I use?",
-          a: "Woven patches can include up to 12 colors per design, giving you excellent flexibility for complex artwork."
+          q: "Do they look 'cheap' because they are flat?",
+          a: "Not at all. In fact, many luxury sportswear brands (like soccer clubs) prefer woven patches because they look sharper, modern, and don't weigh down the jersey."
         }
+      ]}
+
+      // --- MASTERPIECES GALLERY ---
+      masterpieceImages={[
+        "/assets/products/woven-master-1.png",
+        "/assets/products/woven-master-2.png",
+        "/assets/products/woven-master-3.png",
+        "/assets/products/woven-master-4.png",
       ]}
     />
   );

@@ -75,13 +75,14 @@ export function VideoRevealCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* LAYER 1: Video */}
+      {/* LAYER 1: Video - preload="none" for performance */}
       <video
         ref={videoRef}
         src={videoSrc}
         loop
         muted
         playsInline
+        preload="none"
         onCanPlay={() => setIsVideoLoaded(true)}
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -93,26 +94,28 @@ export function VideoRevealCard({
           isHovered && isVideoLoaded ? "opacity-0" : "opacity-100"
         )}
       >
-        {/* ✅ INDUSTRY STANDARD: Next.js Image Component */}
+        {/* Next.js Image Component - no priority for below-fold */}
         <Image
           src={iconSrc}
           alt={title}
           fill
           className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 50vw, 25vw"
+          loading="lazy"
         />
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
 
-      {/* LAYER 3: Text (Only Show on Hover) */}
-      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-2xl font-bold text-white drop-shadow-md text-center uppercase tracking-wide">
-          {title}
-        </h3>
-      </div>
+      {/* LAYER 3: "Hover to Play" hint (Desktop Only - shows when NOT hovered) */}
+      {!isTouchDevice && !isHovered && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+          <span className="text-sm font-medium text-white bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">
+            Hover to Play
+          </span>
+        </div>
+      )}
 
       {/* LAYER 4: Play Button (Mobile Only) */}
       {isTouchDevice && !isPlaying && (

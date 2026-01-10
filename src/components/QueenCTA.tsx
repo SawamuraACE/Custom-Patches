@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "./ui/Button";
 
 interface QuoteButtonProps {
@@ -65,9 +66,12 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
 
           {/* --- CENTER IMAGE --- */}
           <div className="relative flex justify-center order-1 lg:order-2 my-4 lg:my-0">
-             <img 
-               src="/assets/queen-illustration.png" 
-               alt="Queen Illustration" 
+             <Image
+               src="/assets/queen-illustration.png"
+               alt="Queen Illustration"
+               width={450}
+               height={500}
+               sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 450px"
                className="w-[200px] md:w-[400px] lg:w-[450px] object-contain z-10"
              />
           </div>

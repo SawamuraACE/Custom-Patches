@@ -11,7 +11,14 @@ export default function PVCPatchesPage() {
       galleryImages={[
         "/assets/products/pvc-group.png",
         "/assets/products/pvc-back.png",
-        "/assets/products/pvc-gear.png"
+        "/assets/products/pvc-lifestyle.png"
+      ]}
+      
+      masterpieceImages={[
+        "/assets/products/pvc-master-1.png",
+        "/assets/products/pvc-master-2.png",
+        "/assets/products/pvc-master-3.png",
+        "/assets/products/pvc-master-4.png"
       ]}
 
       features={[

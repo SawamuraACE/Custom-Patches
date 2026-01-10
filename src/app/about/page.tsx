@@ -87,10 +87,10 @@ export default function AboutUs() {
             <div className="mt-4">
               <h3 className="text-lg font-bold text-brand-dark uppercase mb-4">5 Star Ratings</h3>
               <div className="flex flex-wrap items-center gap-6 md:gap-8">
-                 <img src="/assets/badge-asi.png" alt="ASI" className="h-8 md:h-10 w-auto object-contain" />
-                 <img src="/assets/badge-trustpilot.png" alt="Trustpilot" className="h-8 md:h-10 w-auto object-contain" />
-                 <img src="/assets/badge-google.png" alt="Google" className="h-8 md:h-10 w-auto object-contain" />
-                 <img src="/assets/badge-etsy.png" alt="Etsy" className="h-8 md:h-10 w-auto object-contain" />
+                 <Image src="/assets/badge-asi.png" alt="ASI" width={100} height={40} className="h-8 md:h-10 w-auto object-contain" />
+                 <Image src="/assets/badge-trustpilot.png" alt="Trustpilot" width={100} height={40} className="h-8 md:h-10 w-auto object-contain" />
+                 <Image src="/assets/badge-google.png" alt="Google" width={100} height={40} className="h-8 md:h-10 w-auto object-contain" />
+                 <Image src="/assets/badge-etsy.png" alt="Etsy" width={100} height={40} className="h-8 md:h-10 w-auto object-contain" />
               </div>
             </div>
 
@@ -149,12 +149,12 @@ export default function AboutUs() {
 
           <div className="grid md:grid-cols-3 gap-8 items-center justify-center">
             {REVIEWS.map((src, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
                 className="relative rounded-xl overflow-hidden shadow-xl border border-gray-200 bg-white max-w-[320px] mx-auto"
               >
-                <img src={src} alt="Review" className="w-full h-auto" />
+                <Image src={src} alt="Review" width={320} height={400} className="w-full h-auto" />
               </motion.div>
             ))}
           </div>

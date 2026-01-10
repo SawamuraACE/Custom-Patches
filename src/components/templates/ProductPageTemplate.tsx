@@ -112,10 +112,10 @@ export function ProductPageTemplate({
               <div className="pt-8 border-t border-gray-100 w-full">
                 <h3 className="text-sm font-bold text-brand-dark mb-4 uppercase">Trusted By 1000+ Brands</h3>
                 <div className="flex flex-nowrap gap-3 md:gap-6 overflow-x-auto pb-2 opacity-90">
-                   <img src="/assets/badge-asi.png" className="h-8 md:h-12 w-auto shrink-0" alt="ASI" />
-                   <img src="/assets/badge-trustpilot.png" className="h-8 md:h-12 w-auto shrink-0" alt="Trustpilot" />
-                   <img src="/assets/badge-google.png" className="h-8 md:h-12 w-auto shrink-0" alt="Google" />
-                   <img src="/assets/badge-etsy.png" className="h-8 md:h-12 w-auto shrink-0" alt="Etsy" />
+                   <Image src="/assets/badge-asi.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="ASI" />
+                   <Image src="/assets/badge-trustpilot.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Trustpilot" />
+                   <Image src="/assets/badge-google.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Google" />
+                   <Image src="/assets/badge-etsy.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Etsy" />
                 </div>
               </div>
             </div>
@@ -158,8 +158,8 @@ export function ProductPageTemplate({
       {/* MODAL */}
       <Modal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)}>
         <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-brand-dark">Get Your Free Quote</h2>
-          <p className="mt-2 text-sm text-gray-500">
+          <h2 className="text-2xl font-bold text-white">Get Your Free Quote</h2>
+          <p className="mt-2 text-sm text-gray-400">
             Fill out the details below and attach your design.
           </p>
         </div>

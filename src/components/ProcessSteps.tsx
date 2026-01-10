@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const STEPS = [
   { id: 1, title: "Image/Sketch", desc: "Share your vision with us – whether it's a sketch, logo, or just an idea.", image: "/assets/step-sketch.png" },
   { id: 2, title: "Mockup", desc: "Review our crafted digital mockup; it's your turn to give the green light.", image: "/assets/step-mockup.png" },
@@ -20,14 +22,14 @@ export function ProcessSteps() {
 
         <div className="relative grid gap-8 md:gap-12 md:grid-cols-3 max-w-5xl mx-auto">
           {/* Arrows */}
-          <img src="/assets/arrow-curve.png" className="hidden md:block absolute top-20 left-[25%] w-24 opacity-80" alt="" />
-          <img src="/assets/arrow-curve.png" className="hidden md:block absolute top-20 right-[25%] w-24 opacity-80" alt="" />
+          <Image src="/assets/arrow-curve.png" width={96} height={48} className="hidden md:block absolute top-20 left-[25%] w-24 opacity-80" alt="" />
+          <Image src="/assets/arrow-curve.png" width={96} height={48} className="hidden md:block absolute top-20 right-[25%] w-24 opacity-80" alt="" />
 
           {STEPS.map((step) => (
             <div key={step.id} className="flex flex-col items-center relative z-10">
               <div className="relative w-40 h-40 md:w-48 md:h-48 mb-4 md:mb-8 rounded-full border-2 border-white/20 p-2 hover:border-brand-orange transition-colors duration-300">
-                <div className="w-full h-full rounded-full overflow-hidden bg-black/50">
-                  <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                <div className="w-full h-full rounded-full overflow-hidden bg-black/50 relative">
+                  <Image src={step.image} alt={step.title} fill className="object-cover" sizes="(max-width: 768px) 160px, 192px" />
                 </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{step.title}</h3>

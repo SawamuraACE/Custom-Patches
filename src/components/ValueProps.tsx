@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const VALUES = [
   { icon: "/assets/icon-money-back.png", title: "Money back", desc: "Your satisfaction owns the patch.", color: "bg-[#FF4D15]" },
   { icon: "/assets/icon-low-min.png", title: "Low minimums", desc: "No minimums. Craft your style.", color: "bg-[#FF6B00]" },
@@ -31,7 +33,7 @@ export function ValueProps() {
               <div className="relative shrink-0 h-14 w-14 md:h-20 md:w-20 flex items-center justify-center mb-3 md:mb-0">
                 <div className={`absolute inset-0 rounded-full ${item.color} opacity-100 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-12 shadow-md`} />
                 <div className="relative z-10 w-7 h-7 md:w-10 md:h-10 transition-transform duration-500 group-hover:-translate-y-1">
-                  <img src={item.icon} alt={item.title} className="h-full w-full object-contain" />
+                  <Image src={item.icon} alt={item.title} width={40} height={40} className="h-full w-full object-contain" />
                 </div>
               </div>
 

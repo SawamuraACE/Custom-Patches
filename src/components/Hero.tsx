@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "./ui/Button";
 import { VideoRevealCard } from "./VideoRevealCard";
 import { Star } from "lucide-react";
@@ -47,14 +48,12 @@ export function Hero({ onOpenQuote }: HeroProps) {
                     {/* Left Column: Text Content */}
                     <div className="flex flex-col items-start space-y-6 text-left">
                         <h1 className="text-4xl font-extrabold tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
-                            Your Custom <br />
-                            <span className="text-transparent bg-clip-text bg-brand-gradient">
-                                Patches Provider
-                            </span>
+                            Unique Custom <br />
+                            Patches <span className="text-transparent bg-clip-text bg-brand-gradient">Tailored for All</span>
                         </h1>
 
                         <p className="max-w-xl text-lg text-gray-600">
-                            Welcome to My Custom Patches. We deliver high-quality custom patches with fast turnaround times. From embroidery to PVC, we bring your designs to life.
+                            Welcome to Panda Patches, where brand stories are stitched into reality! From company logos to promotional swag, let your brand speak loud and clear with our custom iron-on patches. Crafted with care, delivered with precision – Unfolds your brand story!
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -66,16 +65,24 @@ export function Hero({ onOpenQuote }: HeroProps) {
                             </Button>
                         </div>
 
-                        {/* Trust Badges */}
-                        <div className="flex items-center gap-4 pt-4">
-                            <div className="flex -space-x-1">
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                    <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                                ))}
+                        {/* 5 Star Ratings Section */}
+                        <div className="pt-4 space-y-4">
+                            <div className="flex items-center gap-3">
+                                <span className="text-sm font-bold text-brand-dark uppercase">5 Star Ratings</span>
+                                <div className="flex">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                    ))}
+                                </div>
                             </div>
-                            <span className="text-sm font-medium text-gray-600">
-                                Trusted by 1000+ Brands
-                            </span>
+
+                            {/* Trust Badges - 4 logos */}
+                            <div className="flex flex-wrap items-center gap-2 md:gap-6">
+                                <Image src="/assets/badge-asi.png" alt="ASI" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
+                                <Image src="/assets/badge-trustpilot.png" alt="Trustpilot" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
+                                <Image src="/assets/badge-google.png" alt="Google" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
+                                <Image src="/assets/badge-etsy.png" alt="Etsy" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
+                            </div>
                         </div>
                     </div>
 

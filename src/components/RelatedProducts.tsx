@@ -45,10 +45,6 @@ export function RelatedProducts() {
                Explore other premium backing and material options.
              </p>
           </div>
-          <Link href="/custom-patches" className="text-brand-orange font-bold text-sm flex items-center hover:underline group whitespace-nowrap">
-            View All Products 
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
 
         {/* 4 Column Grid */}

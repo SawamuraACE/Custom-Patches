@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/Button";
 
 const PRODUCTS = [
@@ -12,6 +14,7 @@ const PRODUCTS = [
     image: "/assets/product-chenille.png",
     width: "lg:w-[532px]",
     isWide: true,
+    link: "/custom-patches/custom-chenille-patches",
   },
   {
     id: 2,
@@ -21,6 +24,7 @@ const PRODUCTS = [
     image: "/assets/product-pvc.png",
     width: "lg:w-[340px]",
     isWide: false,
+    link: "/custom-patches/custom-pvc-patches",
   },
   {
     id: 3,
@@ -30,6 +34,7 @@ const PRODUCTS = [
     image: "/assets/product-woven.png",
     width: "lg:w-[340px]",
     isWide: false,
+    link: "/custom-patches/custom-woven-patches",
   },
 
   // --- ROW 2 ---
@@ -41,6 +46,7 @@ const PRODUCTS = [
     image: "/assets/product-leather.png",
     width: "lg:w-[340px]",
     isWide: false,
+    link: "/custom-patches/custom-leather-patches",
   },
   {
     id: 5,
@@ -50,6 +56,7 @@ const PRODUCTS = [
     image: "/assets/product-charm.png",
     width: "lg:w-[340px]",
     isWide: false,
+    link: "/custom-patches/custom-pvc-patches",
   },
   {
     id: 6,
@@ -59,6 +66,7 @@ const PRODUCTS = [
     image: "/assets/product-embroidery.png",
     width: "lg:w-[532px]",
     isWide: true,
+    link: "/custom-patches/custom-embroidered-patches",
   },
 ];
 
@@ -104,24 +112,28 @@ export function ProductsGrid() {
                 </div>
 
                 {/* Button: Reverted to White Box (Figma Style) */}
-                <Button
-                  className="bg-white text-brand-dark hover:bg-gray-100 border-none font-bold text-xs px-6 h-9 w-max rounded-md"
-                  size="sm"
-                >
-                  Learn More
-                </Button>
+                <Link href={product.link}>
+                  <Button
+                    className="bg-white text-brand-dark hover:bg-gray-100 border-none font-bold text-xs px-6 h-9 w-max rounded-md"
+                    size="sm"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </div>
 
-              {/* 
-                 LAYER 2: The Image (Z-Index 10 - BEHIND) 
+              {/*
+                 LAYER 2: The Image (Z-Index 10 - BEHIND)
                  - Positioned Absolute Right
                  - It's okay if it slides under the text slightly
               */}
               <div className="absolute top-0 right-[-10px] h-full w-[55%] flex items-center justify-center z-10 pointer-events-none">
-                <img
+                <Image
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 300px"
+                  className="object-contain transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out"
                 />
               </div>
             </div>

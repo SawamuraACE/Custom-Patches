@@ -1,45 +1,57 @@
 import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
-export default function NoBackgroundPVCPage() {
+export default function NoBgPvcPage() {
   return (
     <ProductPageTemplate
+      // --- SEO & HEADER ---
       title="No Background PVC Patches"
-      subtitle="Clean, Modern, Minimalist"
-      description="Get the perfect custom patch without the background. Our no-background PVC patches feature clean edges and transparent backing, allowing your design to stand out on any surface. Ideal for modern brands seeking a sleek, contemporary look."
+      subtitle="Precision Cut. Modern Aesthetic. Zero Bulk."
+      description="Achieve the cleanest look possible with No Background PVC patches. Unlike traditional patches that sit on a base shape (circle/square), these are die-cut exactly to the outline of your design. Whether it's floating text or a complex logo, the 'No Background' style integrates seamlessly with your gear, making it look like it belongs there."
       
-      heroImage="/assets/products/no-bg-pvc-hero.png"
+      // --- HERO GALLERY IMAGES ---
+      heroImage="/assets/products/nobg-pvc-hero.png"
       galleryImages={[
-        "/assets/products/no-bg-pvc-group.png",
-        "/assets/products/no-bg-pvc-back.png",
-        "/assets/products/no-bg-pvc-clean.png"
+        "/assets/products/nobg-pvc-group.png",
+        "/assets/products/nobg-pvc-back.png",
+        "/assets/products/nobg-pvc-lifestyle.png"
       ]}
 
+      // --- FEATURES ---
       features={[
-        "No background or white space",
-        "Clean, precise edges",
-        "Transparent PVC material",
-        "Modern minimalist design",
-        "100% waterproof",
-        "Perfect for contemporary brands"
+        "Die-cut exactly to your logo's shape (No square/circle borders)",
+        "Lightweight and streamlined (Less bulk)",
+        "Waterproof and durable soft rubber",
+        "Ideal for floating text or irregular shapes",
+        "Available with Velcro or Heat Press backing",
+        "Modern, tactical, and high-tech look"
       ]}
 
+      // --- FAQS ---
       faqs={[
         {
-          q: "How is the background removed?",
-          a: "We use precision cutting and transparent PVC material to eliminate the background, showing only your design."
+          q: "What does 'No Background' mean?",
+          a: "It means we cut the patch exactly to the edge of your design elements. There is no extra material or 'border' shape surrounding your logo. It creates a floating effect."
         },
         {
-          q: "Will it look good on different surfaces?",
-          a: "Absolutely! No-background patches work beautifully on any color or material since there's no white or colored backing."
+          q: "Are small details possible?",
+          a: "Yes, but there are limits. Since we are cutting rubber, elements usually need to be at least 2mm thick. If your design has floating islands (unconnected parts), we use a thin transparent base to hold them together."
         },
         {
-          q: "Is it still waterproof?",
-          a: "Yes! No-background PVC patches maintain full waterproof properties while offering a cleaner aesthetic."
+          q: "Is Velcro available for these?",
+          a: "Yes! We laser-cut the Velcro to match the exact shape of your PVC design, so it sits flush on your gear."
         },
         {
-          q: "How do I apply it?",
-          a: "These patches come with velcro or sew-on backing depending on your needs. Apply just like any other patch."
+          q: "What is the minimum order?",
+          a: "No minimums! Whether you need a single prototype or 500 pieces for a unit, we can manufacture it."
         }
+      ]}
+
+      // --- MASTERPIECES GALLERY ---
+      masterpieceImages={[
+        "/assets/products/nobg-pvc-master-1.png",
+        "/assets/products/nobg-pvc-master-2.png",
+        "/assets/products/nobg-pvc-master-3.png",
+        "/assets/products/nobg-pvc-master-4.png",
       ]}
     />
   );

@@ -1,19 +1,45 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { SpecialRates } from "../components/SpecialRates";
-import { ValueProps } from "../components/ValueProps";
-import { ProductsGrid } from "../components/ProductsGrid";
-import { ProcessSteps } from "../components/ProcessSteps";
-import { QueenCTA } from "../components/QueenCTA";
-import { FaqSection } from "../components/FaqSection";
-import { BlogsSection } from "../components/BlogsSection";
-import { BottomCTA } from "../components/BottomCTA";
+import { Footer } from "../components/Footer";
 import { Modal } from "../components/ui/Modal";
 import { QuoteForm } from "../components/QuoteForm";
-import { Footer } from "../components/Footer";
+
+// Dynamic imports for below-the-fold components (lazy loading)
+const SpecialRates = dynamic(() => import("../components/SpecialRates").then(mod => ({ default: mod.SpecialRates })), {
+  loading: () => <div className="h-96 bg-gray-50 animate-pulse" />,
+});
+
+const ValueProps = dynamic(() => import("../components/ValueProps").then(mod => ({ default: mod.ValueProps })), {
+  loading: () => <div className="h-64 bg-white animate-pulse" />,
+});
+
+const ProductsGrid = dynamic(() => import("../components/ProductsGrid").then(mod => ({ default: mod.ProductsGrid })), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const ProcessSteps = dynamic(() => import("../components/ProcessSteps").then(mod => ({ default: mod.ProcessSteps })), {
+  loading: () => <div className="h-64 bg-gray-900 animate-pulse" />,
+});
+
+const QueenCTA = dynamic(() => import("../components/QueenCTA").then(mod => ({ default: mod.QueenCTA })), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+});
+
+const FaqSection = dynamic(() => import("../components/FaqSection").then(mod => ({ default: mod.FaqSection })), {
+  loading: () => <div className="h-64 bg-white animate-pulse" />,
+});
+
+const BlogsSection = dynamic(() => import("../components/BlogsSection").then(mod => ({ default: mod.BlogsSection })), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const BottomCTA = dynamic(() => import("../components/BottomCTA").then(mod => ({ default: mod.BottomCTA })), {
+  loading: () => <div className="h-32 bg-gray-900 animate-pulse" />,
+});
 
 export default function Home() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -21,10 +47,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white font-sans">
       <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
-      
-      {/* 1. Hero */}
+
+      {/* 1. Hero - Above the fold, loaded immediately */}
       <Hero onOpenQuote={() => setIsQuoteOpen(true)} />
-      
+
       {/* 2. Unlock Special Rates (Dark Form) */}
       <SpecialRates />
 
@@ -59,7 +85,7 @@ export default function Home() {
         </div>
         <QuoteForm />
       </Modal>
-      
+
       <Footer />
     </main>
   );

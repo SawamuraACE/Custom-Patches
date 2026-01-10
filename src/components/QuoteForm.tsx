@@ -80,10 +80,11 @@ export function QuoteForm() {
           from_name: "My Custom Patches Website",
           
           // Form Data
-          name: data.name,
-          email: data.email,
-          phone: data.phone || "Not provided",
-          details: `Size: ${data.size}, Qty: ${data.quantity}`,
+           name: data.name,
+           email: data.email,
+           phone: data.phone,
+           patch_type: data.category,
+           details: `Patch Type: ${data.category}, Size: ${data.size}, Qty: ${data.quantity}`,
           
           // This allows you to click the link in the email to download the image
           attachment_link: attachmentUrl || "No file uploaded", 
@@ -152,16 +153,37 @@ export function QuoteForm() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Input placeholder="Phone (Optional)" type="tel" {...register("phone")} />
-        <div className="flex gap-2">
-          <div className="flex-1 space-y-2">
-            <Input placeholder="Size (e.g. 3x3)" {...register("size")} />
-            {errors.size && <p className="text-xs text-red-500">{errors.size.message}</p>}
-          </div>
-          <div className="flex-1 space-y-2">
-            <Input placeholder="Qty" type="number" {...register("quantity")} />
-            {errors.quantity && <p className="text-xs text-red-500">{errors.quantity.message}</p>}
-          </div>
+        <div className="space-y-2">
+          <Input placeholder="Phone Number" type="tel" {...register("phone")} />
+          {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <select 
+            {...register("category")}
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+          >
+            <option value="">Select Patch Type</option>
+            <option value="Custom Embroidered Patches">Custom Embroidered Patches</option>
+            <option value="Custom Chenille Patches">Custom Chenille Patches</option>
+            <option value="Custom Woven Patches">Custom Woven Patches</option>
+            <option value="Custom Printed Patches">Custom Printed Patches</option>
+            <option value="Custom PVC Patches">Custom PVC Patches</option>
+            <option value="Custom Leather Patches">Custom Leather Patches</option>
+            <option value="No Background PVC">No Background PVC</option>
+            <option value="Custom Sequin Patches">Custom Sequin Patches</option>
+          </select>
+          {errors.category && <p className="text-xs text-red-500">{errors.category.message}</p>}
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="flex-1 space-y-2">
+          <Input placeholder="Size (e.g. 3x3)" {...register("size")} />
+          {errors.size && <p className="text-xs text-red-500">{errors.size.message}</p>}
+        </div>
+        <div className="flex-1 space-y-2">
+          <Input placeholder="Qty" type="number" {...register("quantity")} />
+          {errors.quantity && <p className="text-xs text-red-500">{errors.quantity.message}</p>}
         </div>
       </div>
 
@@ -169,18 +191,18 @@ export function QuoteForm() {
       <div
         {...getRootProps()}
         className={cn(
-          "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-6 transition-colors hover:bg-gray-100",
-          isDragActive && "border-brand-orange bg-brand-orange/5",
+          "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-600 bg-gray-900 p-6 transition-colors hover:bg-gray-800",
+          isDragActive && "border-brand-orange bg-brand-orange/10",
           errors.file && "border-red-500"
         )}
       >
         <input {...getInputProps()} />
-        <Upload className="mb-2 h-8 w-8 text-gray-400" />
+        <Upload className="mb-2 h-8 w-8 text-gray-500" />
         {file ? (
-          <p className="text-sm font-medium text-brand-dark">{(file as File).name}</p>
+          <p className="text-sm font-medium text-white">{(file as File).name}</p>
         ) : (
           <div className="text-center">
-            <p className="text-sm font-medium text-gray-600">Click to upload or drag & drop</p>
+            <p className="text-sm font-medium text-gray-300">Click to upload or drag & drop</p>
             <p className="text-xs text-gray-500">SVG, PNG, JPG or PDF (Max 10MB)</p>
           </div>
         )}

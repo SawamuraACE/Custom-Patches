@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
@@ -150,10 +151,12 @@ export function SpecialRates() {
         <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto">
           <div className="w-full lg:w-1/2 py-24 px-8 flex flex-col items-center justify-center text-center relative">
             <div className="relative w-[131px] h-[120px] mb-6 animate-float">
-              <img 
-                 src="/assets/instant-quote-envelope.png" 
-                 alt="Envelope" 
-                 className="w-full h-full object-contain drop-shadow-xl"
+              <Image
+                 src="/assets/instant-quote-envelope.png"
+                 alt="Envelope"
+                 fill
+                 sizes="131px"
+                 className="object-contain drop-shadow-xl"
                />
             </div>
 
@@ -192,13 +195,15 @@ export function SpecialRates() {
         
         {/* LEFT SIDE: "Instant Quote Available" */}
         <div className="w-full lg:w-1/2 px-8 flex flex-col items-center justify-center text-center relative">
-          
+
           {/* Envelope Icon */}
           <div className="relative w-[131px] h-[120px] mb-6 animate-float">
-             <img 
-                src="/assets/instant-quote-envelope.png" 
-                alt="Envelope" 
-                className="w-full h-full object-contain drop-shadow-xl"
+             <Image
+                src="/assets/instant-quote-envelope.png"
+                alt="Envelope"
+                fill
+                sizes="131px"
+                className="object-contain drop-shadow-xl"
               />
           </div>
 

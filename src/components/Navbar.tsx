@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/Button";
 import { cn } from "../lib/utils";
@@ -39,10 +40,13 @@ export function Navbar({ onOpenQuote }: NavbarProps) {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
-            <img
+            <Image
               src="/assets/logo.png"
               alt="My Custom Patches"
+              width={120}
+              height={48}
               className="h-12 w-auto object-contain"
+              priority
             />
           </Link>
         </div>
@@ -142,29 +146,29 @@ export function Navbar({ onOpenQuote }: NavbarProps) {
               </button>
               
               {/* Dropdown Items */}
-              {isDropdownOpen && (
-                <div className="pl-4 mt-2 space-y-2">
-                  {PATCH_CATEGORIES.map((category) => (
-                    <Link
-                      key={category}
-                      href={`/custom-patches/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                      onClick={closeMenu}
-                      className="block text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors py-1.5"
-                    >
-                      {category}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                {isDropdownOpen && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {PATCH_CATEGORIES.map((category) => (
+                      <Link
+                        key={category}
+                        href={`/custom-patches/${category.toLowerCase().replace(/\s+/g, "-")}`}
+                        onClick={closeMenu}
+                        className="block text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors py-1.5"
+                      >
+                        {category}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <Link
-              href="/contact"
-              onClick={closeMenu}
-              className="block text-base font-medium text-gray-700 hover:text-brand-orange transition-colors py-2"
-            >
-              Contact
-            </Link>
+              <Link
+                href="/contact"
+                onClick={closeMenu}
+                className="block text-base font-medium text-gray-700 hover:text-brand-orange transition-colors py-2"
+              >
+                Contact
+              </Link>
             
             <button 
               onClick={handleQuoteClick}

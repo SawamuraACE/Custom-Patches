@@ -4,8 +4,9 @@ import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"], // Reduced from 6 to 3 weights for faster loading
   variable: "--font-poppins",
+  display: "swap", // Prevent FOUT (Flash of Unstyled Text)
 });
 
 export const metadata: Metadata = {
