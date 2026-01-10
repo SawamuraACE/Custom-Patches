@@ -38,8 +38,8 @@ export function SpecialRates() {
     phone: "",
     quantity: "",
     size: "",
-    patchType: "Embroidered Patches",
-    backing: "Iron on",
+    patchType: "",
+    backing: "",
     instructions: "",
   });
 
@@ -129,8 +129,8 @@ export function SpecialRates() {
           phone: "",
           quantity: "",
           size: "",
-          patchType: "Embroidered Patches",
-          backing: "Iron on",
+          patchType: "",
+          backing: "",
           instructions: "",
         });
         setSelectedFile(null);
@@ -245,58 +245,72 @@ export function SpecialRates() {
                     />
                   </div>
 
+                  <Input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg"
+                    placeholder="Phone Number"
+                    required
+                  />
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input 
-                      name="phone"
-                      value={formData.phone}
+                    <Input
+                      name="size"
+                      value={formData.size}
                       onChange={handleInputChange}
-                      className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg" 
-                      placeholder="Phone Number"
+                      className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg"
+                      placeholder="Size Or Placement"
+                      required
                     />
-                    <Input 
+                    <Input
                       name="quantity"
                       type="number"
                       value={formData.quantity}
                       onChange={handleInputChange}
-                      className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg" 
+                      className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg"
                       placeholder="Quantity"
                       required
                     />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input 
-                      name="size"
-                      value={formData.size}
-                      onChange={handleInputChange}
-                      className="bg-[#2A2A2A] border-transparent text-white placeholder:text-gray-400 h-12 rounded-lg" 
-                      placeholder="Size Or Placement"
-                      required
-                    />
                     <div className="relative">
-                      <select 
+                      <select
                         name="patchType"
                         value={formData.patchType}
                         onChange={handleInputChange}
-                        className="w-full bg-[#2A2A2A] text-white h-12 rounded-lg px-3 text-sm border-transparent focus:border-brand-orange appearance-none cursor-pointer"
+                        className="w-full bg-[#2A2A2A] text-white h-12 rounded-lg px-3 text-sm border-2 border-brand-orange focus:border-brand-orange appearance-none cursor-pointer"
+                        required
                       >
-                        <option>Embroidered Patches</option>
-                        <option>PVC Patches</option>
+                        <option value="" className="bg-[#1A1A1A] text-gray-400">Select Patch Type</option>
+                        <option value="Custom Embroidered Patches" className="bg-[#1A1A1A]">Custom Embroidered Patches</option>
+                        <option value="Custom Chenille Patches" className="bg-[#1A1A1A]">Custom Chenille Patches</option>
+                        <option value="Custom Woven Patches" className="bg-[#1A1A1A]">Custom Woven Patches</option>
+                        <option value="Custom Printed Patches" className="bg-[#1A1A1A]">Custom Printed Patches</option>
+                        <option value="Custom PVC Patches" className="bg-[#1A1A1A]">Custom PVC Patches</option>
+                        <option value="Custom Leather Patches" className="bg-[#1A1A1A]">Custom Leather Patches</option>
+                        <option value="Custom 3D Embroidery Transfer" className="bg-[#1A1A1A]">Custom 3D Embroidery Transfer</option>
+                        <option value="Custom Sequin Patches" className="bg-[#1A1A1A]">Custom Sequin Patches</option>
                       </select>
                     </div>
-                  </div>
-
-                  <div className="relative">
-                      <select 
+                    <div className="relative">
+                      <select
                         name="backing"
                         value={formData.backing}
                         onChange={handleInputChange}
                         className="w-full bg-[#2A2A2A] text-white h-12 rounded-lg px-3 text-sm border-transparent focus:border-brand-orange appearance-none cursor-pointer"
+                        required
                       >
-                        <option>Iron on</option>
-                        <option>Velcro</option>
-                        <option>Sew on</option>
+                        <option value="" className="bg-[#1A1A1A] text-gray-400">Select Backing</option>
+                        <option value="Iron-on" className="bg-[#1A1A1A]">Iron-on</option>
+                        <option value="Sew-on" className="bg-[#1A1A1A]">Sew-on</option>
+                        <option value="Velcro" className="bg-[#1A1A1A]">Velcro</option>
+                        <option value="Adhesive" className="bg-[#1A1A1A]">Adhesive</option>
+                        <option value="Sticker" className="bg-[#1A1A1A]">Sticker</option>
+                        <option value="Plain" className="bg-[#1A1A1A]">Plain (No Backing)</option>
                       </select>
+                    </div>
                   </div>
 
                   <textarea 

@@ -18,7 +18,7 @@ const PATCH_CATEGORIES = [
   "Custom Woven Patches",
   "Custom Printed Patches",
   "Custom Leather Patches",
-  "No Background PVC",
+  "Custom 3D Embroidery Transfer",
   "Custom Sequin Patch",
 ];
 

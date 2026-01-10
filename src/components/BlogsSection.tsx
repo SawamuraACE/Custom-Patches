@@ -53,8 +53,9 @@ export function BlogsSection() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4 uppercase tracking-wide">
-            BLOGS
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 uppercase tracking-wide">
+            <span className="text-brand-dark">BLOGS & </span>
+            <span className="text-brand-orange">NEWS</span>
           </h2>
           <p className="text-gray-500 text-sm md:text-base">
             Latest news and guides from the patch experts.

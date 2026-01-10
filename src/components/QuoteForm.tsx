@@ -74,21 +74,21 @@ export function QuoteForm() {
         },
         body: JSON.stringify({
           // ✅ Using environment variable (industry standard)
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY, 
-          
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+
           subject: `New Quote Request from ${data.name}`,
           from_name: "My Custom Patches Website",
-          
+
           // Form Data
            name: data.name,
            email: data.email,
            phone: data.phone,
            patch_type: data.category,
-           details: `Patch Type: ${data.category}, Size: ${data.size}, Qty: ${data.quantity}`,
-          
+           details: `Patch Type: ${data.category}, Size: ${data.size}, Qty: ${data.quantity}, Backing: ${data.backing || "Not specified"}`,
+
           // This allows you to click the link in the email to download the image
-          attachment_link: attachmentUrl || "No file uploaded", 
-          
+          attachment_link: attachmentUrl || "No file uploaded",
+
           // Technical Message Body
           message: `
             New Quote Request:
@@ -96,12 +96,18 @@ export function QuoteForm() {
             Name: ${data.name}
             Email: ${data.email}
             Phone: ${data.phone}
-            
+
             Specs:
             ------
+            Patch Type: ${data.category}
             Size: ${data.size}
             Quantity: ${data.quantity}
-            
+            Backing: ${data.backing || "Not specified"}
+
+            Special Instructions:
+            ---------------------
+            ${data.instructions || "None"}
+
             Design File:
             ------------
             ${attachmentUrl ? attachmentUrl : "No file attached"}
@@ -158,7 +164,7 @@ export function QuoteForm() {
           {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
         </div>
         <div className="space-y-2">
-          <select 
+          <select
             {...register("category")}
             className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
           >
@@ -169,7 +175,7 @@ export function QuoteForm() {
             <option value="Custom Printed Patches">Custom Printed Patches</option>
             <option value="Custom PVC Patches">Custom PVC Patches</option>
             <option value="Custom Leather Patches">Custom Leather Patches</option>
-            <option value="No Background PVC">No Background PVC</option>
+            <option value="Custom 3D Embroidery Transfer">Custom 3D Embroidery Transfer</option>
             <option value="Custom Sequin Patches">Custom Sequin Patches</option>
           </select>
           {errors.category && <p className="text-xs text-red-500">{errors.category.message}</p>}
@@ -182,8 +188,30 @@ export function QuoteForm() {
           {errors.size && <p className="text-xs text-red-500">{errors.size.message}</p>}
         </div>
         <div className="flex-1 space-y-2">
-          <Input placeholder="Qty" type="number" {...register("quantity")} />
+          <Input placeholder="Quantity" type="number" {...register("quantity")} />
           {errors.quantity && <p className="text-xs text-red-500">{errors.quantity.message}</p>}
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="space-y-2">
+          <select
+            {...register("backing")}
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+          >
+            <option value="">Select Backing</option>
+            <option value="Iron-on">Iron-on</option>
+            <option value="Sew-on">Sew-on</option>
+            <option value="Velcro">Velcro</option>
+            <option value="Adhesive">Adhesive</option>
+            <option value="Sticker">Sticker</option>
+            <option value="Plain">Plain (No Backing)</option>
+          </select>
+          {errors.backing && <p className="text-xs text-red-500">{errors.backing.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <Input placeholder="Special Instructions (Optional)" {...register("instructions")} />
+          {errors.instructions && <p className="text-xs text-red-500">{errors.instructions.message}</p>}
         </div>
       </div>
 
@@ -191,13 +219,13 @@ export function QuoteForm() {
       <div
         {...getRootProps()}
         className={cn(
-          "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-600 bg-gray-900 p-6 transition-colors hover:bg-gray-800",
+          "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-600 bg-gray-900 p-3 transition-colors hover:bg-gray-800",
           isDragActive && "border-brand-orange bg-brand-orange/10",
           errors.file && "border-red-500"
         )}
       >
         <input {...getInputProps()} />
-        <Upload className="mb-2 h-8 w-8 text-gray-500" />
+        <Upload className="mb-1 h-6 w-6 text-gray-500" />
         {file ? (
           <p className="text-sm font-medium text-white">{(file as File).name}</p>
         ) : (

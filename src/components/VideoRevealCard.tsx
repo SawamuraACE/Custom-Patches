@@ -68,22 +68,22 @@ export function VideoRevealCard({
   return (
     <div
       className={cn(
-        "group relative aspect-square overflow-hidden bg-gray-100 transition-all duration-300 cursor-pointer",
+        "group relative aspect-square overflow-hidden bg-gray-100 transition-all duration-300 cursor-pointer rounded-2xl",
         "hover:ring-4 hover:ring-brand-orange hover:shadow-2xl hover:z-10",
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* LAYER 1: Video - preload="none" for performance */}
+      {/* LAYER 1: Video - preload="metadata" for hover functionality */}
       <video
         ref={videoRef}
         src={videoSrc}
         loop
         muted
         playsInline
-        preload="none"
-        onCanPlay={() => setIsVideoLoaded(true)}
+        preload="metadata"
+        onLoadedData={() => setIsVideoLoaded(true)}
         className="absolute inset-0 h-full w-full object-cover"
       />
 

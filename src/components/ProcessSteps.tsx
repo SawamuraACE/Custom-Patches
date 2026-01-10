@@ -14,7 +14,8 @@ export function ProcessSteps() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 text-center">
         
         <h2 className="text-2xl md:text-4xl font-extrabold uppercase mb-4 tracking-wide">
-          Take the First Step on Your Patch Quest!
+          <span className="text-white">Take the First Step on </span>
+          <span className="text-brand-orange">Your Patch Quest!</span>
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mb-10 md:mb-16 text-sm md:text-base">
           Step into an adventure where ordering custom patches is as easy as 1-2-3.

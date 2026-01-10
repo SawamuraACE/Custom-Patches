@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SpecialRates } from "@/components/SpecialRates"; // Reuse the bottom form
@@ -71,8 +71,9 @@ export function ProductPageTemplate({
             {/* RIGHT: DETAILS */}
             <div className="flex flex-col items-start space-y-8 sticky top-24">
               <div>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-4 leading-tight">
-                  {title}
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                  <span className="text-brand-dark">Custom </span>
+                  <span className="text-brand-orange">{title.replace('Custom ', '')}</span>
                 </h1>
                 <p className="text-lg font-medium text-brand-orange uppercase tracking-wide">
                   {subtitle}
@@ -111,11 +112,11 @@ export function ProductPageTemplate({
               {/* Trust Badges */}
               <div className="pt-8 border-t border-gray-100 w-full">
                 <h3 className="text-sm font-bold text-brand-dark mb-4 uppercase">Trusted By 1000+ Brands</h3>
-                <div className="flex flex-nowrap gap-3 md:gap-6 overflow-x-auto pb-2 opacity-90">
-                   <Image src="/assets/badge-asi.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="ASI" />
-                   <Image src="/assets/badge-trustpilot.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Trustpilot" />
-                   <Image src="/assets/badge-google.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Google" />
-                   <Image src="/assets/badge-etsy.png" width={120} height={48} className="h-8 md:h-12 w-auto shrink-0" alt="Etsy" />
+                <div className="flex flex-wrap gap-3 md:gap-6 opacity-90">
+                   <Image src="/assets/badge-asi.png" width={100} height={40} className="h-6 md:h-12 w-auto shrink-0" alt="ASI" />
+                   <Image src="/assets/badge-trustpilot.png" width={100} height={40} className="h-6 md:h-12 w-auto shrink-0" alt="Trustpilot" />
+                   <Image src="/assets/badge-google.png" width={100} height={40} className="h-6 md:h-12 w-auto shrink-0" alt="Google" />
+                   <Image src="/assets/badge-etsy.png" width={100} height={40} className="h-6 md:h-12 w-auto shrink-0" alt="Etsy" />
                 </div>
               </div>
             </div>

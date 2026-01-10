@@ -76,9 +76,10 @@ export function ProductsGrid() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark uppercase tracking-wide leading-tight">
-            INFUSE YOUR STYLE WITH EXCLUSIVE <br />
-            CUSTOM PATCH DESIGNS
+          <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide leading-tight">
+            <span className="text-brand-dark">INFUSE YOUR STYLE WITH </span>
+            <span className="text-brand-orange">EXCLUSIVE <br />
+            CUSTOM PATCH DESIGNS</span>
           </h2>
           <p className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed">
             From custom logo patches to iron-on patches, military patches, and custom Velcro patches, our tailored selection ensures a lasting impression, showcasing your unique style. At My Custom Patches, we're dedicated to providing custom-made patches that bring brand vision to life and take your product to the next level.

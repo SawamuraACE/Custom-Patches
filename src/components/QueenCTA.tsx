@@ -27,9 +27,10 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
         
         {/* Header */}
         <div className="text-center mb-8 relative z-10">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-brand-dark uppercase tracking-wide leading-tight mb-4">
-            From Idea to Iron-on Patches: <br/>
-            Your Patch Journey Starts Here!
+          <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-4">
+            <span className="text-brand-dark">From Idea to </span>
+            <span className="text-brand-orange">Iron-on Patches: <br/>
+            Your Patch Journey Starts Here!</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-sm">
             From sparking ideas to stunning iron-on patches, your patch journey begins here!

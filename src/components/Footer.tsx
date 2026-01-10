@@ -70,11 +70,11 @@ export function Footer() {
                 "Custom Woven Patches",
                 "Custom Leather Patches",
                 "Custom Printed Patches",
-                "No Background PVC",
+                "Custom 3D Embroidery Transfer",
                 "Custom Sequin Patch",
               ].map((item) => (
                 <li key={item}>
-                  <Link 
+                  <Link
                     href={`/custom-patches/${item.toLowerCase().replace(/ /g, "-")}`}
                     className="text-sm text-gray-600 hover:text-brand-orange transition-colors"
                   >

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { TawkToChat } from "@/components/TawkToChat";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${poppins.variable} font-sans antialiased bg-white text-gray-900`}
         suppressHydrationWarning
       >
+        <TawkToChat />
         {children}
       </body>
     </html>

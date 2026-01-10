@@ -14,25 +14,25 @@ const DEMO_CARDS = [
         id: 1,
         title: "Embroidered",
         iconSrc: "/assets/icons/sample1.png",
-        videoSrc: "/assets/videos/sample1.mp4",
+        videoSrc: "/assets/videos/Sample1.mp4",
     },
     {
         id: 2,
         title: "PVC Patches",
         iconSrc: "/assets/icons/sample2.png",
-        videoSrc: "/assets/videos/sample2.mp4",
+        videoSrc: "/assets/videos/Sample2.mp4",
     },
     {
         id: 3,
         title: "Woven Labels",
         iconSrc: "/assets/icons/sample3.png",
-        videoSrc: "/assets/videos/sample3.mp4",
+        videoSrc: "/assets/videos/Sample3.mp4",
     },
     {
         id: 4,
         title: "Leather",
         iconSrc: "/assets/icons/sample4.png",
-        videoSrc: "/assets/videos/sample4.mp4",
+        videoSrc: "/assets/videos/Sample4.mp4",
     },
 ];
 

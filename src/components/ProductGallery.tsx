@@ -21,12 +21,12 @@ export function ProductGallery({ images }: ProductGalleryProps) {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8">
         
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-brand-dark uppercase tracking-wide mb-4">
-            Our Recent Masterpieces
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            Check out some of the custom designs we've brought to life.
-          </p>
+         <h2 className="text-4xl font-extrabold uppercase tracking-wide mb-4">
+           Our Recent <span className="text-brand-orange">Masterpieces</span>
+         </h2>
+         <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+           Check out some of the custom designs we've brought to life.
+         </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

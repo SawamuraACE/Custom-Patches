@@ -4,7 +4,7 @@ export default function NoBgPvcPage() {
   return (
     <ProductPageTemplate
       // --- SEO & HEADER ---
-      title="No Background PVC Patches"
+      title="Custom 3D Embroidery Transfer"
       subtitle="Precision Cut. Modern Aesthetic. Zero Bulk."
       description="Achieve the cleanest look possible with No Background PVC patches. Unlike traditional patches that sit on a base shape (circle/square), these are die-cut exactly to the outline of your design. Whether it's floating text or a complex logo, the 'No Background' style integrates seamlessly with your gear, making it look like it belongs there."
       

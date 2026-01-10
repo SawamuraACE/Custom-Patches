@@ -18,8 +18,9 @@ export default function ContactUs() {
 
       {/* 1. Header Section */}
       <section className="pt-32 pb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-4">
-          Contact Us
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          <span className="text-brand-dark">Contact </span>
+          <span className="text-brand-orange">Us</span>
         </h1>
         <p className="text-gray-500 text-sm md:text-base">
           Any question or remarks? Just write us a message!

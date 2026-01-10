@@ -55,8 +55,9 @@ export default function AboutUs() {
       {/* 1. HERO SECTION (Updated to Black) */}
       <section className="pt-40 pb-24 text-center bg-[#111] relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight mb-4">
-            About <span className="text-brand-orange">Us!!</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight mb-4">
+            <span className="text-white">About </span>
+            <span className="text-brand-orange">Us!!</span>
           </h1>
           {/* Decorative Underline */}
           <div className="w-32 h-1.5 bg-brand-orange mx-auto rounded-full" />
@@ -106,8 +107,9 @@ export default function AboutUs() {
             {/* Left Column: Text */}
             <div className="space-y-8">
               {/* 50px Heading */}
-              <h2 className="text-[36px] md:text-[50px] font-bold text-brand-dark uppercase leading-tight">
-                PANDA PATCHES <br/> FACTORY
+              <h2 className="text-[36px] md:text-[50px] font-bold uppercase leading-tight">
+                <span className="text-brand-dark">PANDA PATCHES <br/></span>
+                <span className="text-brand-orange">FACTORY</span>
               </h2>
               
               {/* Text with Orange Line */}
@@ -140,8 +142,9 @@ export default function AboutUs() {
       {/* 5. SOCIAL REVIEWS */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-[36px] md:text-[40px] font-extrabold text-brand-dark uppercase mb-4">
-            Social Reviews
+          <h2 className="text-[36px] md:text-[40px] font-extrabold uppercase mb-4">
+            <span className="text-brand-dark">Social </span>
+            <span className="text-brand-orange">Reviews</span>
           </h2>
           <div className="flex justify-center gap-1 mb-16">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-8 h-8 text-yellow-400 fill-yellow-400" />)}
@@ -164,8 +167,9 @@ export default function AboutUs() {
       {/* 6. PICK YOUR PATCH */}
       <section className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-[36px] md:text-[40px] font-extrabold text-brand-dark uppercase mb-16">
-            Pick Your Patch!
+          <h2 className="text-[36px] md:text-[40px] font-extrabold uppercase mb-16">
+            <span className="text-brand-dark">Pick Your </span>
+            <span className="text-brand-orange">Patch!</span>
           </h2>
           
           <div className="flex flex-wrap justify-center gap-10 md:gap-16">

@@ -7,6 +7,8 @@ export const quoteSchema = z.object({
   category: z.string().min(1, "Please select a patch type"),
   size: z.string().min(1, "Size is required"),
   quantity: z.string().min(1, "Quantity is required"),
+  backing: z.string().optional(),
+  instructions: z.string().optional(),
   file: z.any().optional(),
 });
 
