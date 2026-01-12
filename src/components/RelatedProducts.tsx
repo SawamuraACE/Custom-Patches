@@ -57,11 +57,12 @@ export function RelatedProducts() {
             >
               {/* IMAGE AREA - FIXED */}
               <div className="relative h-64 w-full bg-gray-50 flex items-center justify-center p-6">
-                <Image 
-                  src={item.img} 
-                  alt={item.name} 
-                  fill 
-                  className="object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md" 
+                <Image
+                  src={item.img}
+                  alt={item.name}
+                  fill
+                  className="object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md"
+                  loading="lazy"
                 />
               </div>
               

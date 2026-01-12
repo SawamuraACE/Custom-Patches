@@ -74,6 +74,7 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
                height={500}
                sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 450px"
                className="w-[200px] md:w-[400px] lg:w-[450px] object-contain z-10"
+               loading="lazy"
              />
           </div>
 
