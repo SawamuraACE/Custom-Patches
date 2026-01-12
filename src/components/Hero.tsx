@@ -78,10 +78,10 @@ export function Hero({ onOpenQuote }: HeroProps) {
 
                             {/* Trust Badges - 4 logos */}
                             <div className="flex flex-wrap items-center gap-2 md:gap-6">
-                                <Image src="/assets/badge-asi.png" alt="ASI" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
-                                <Image src="/assets/badge-trustpilot.png" alt="Trustpilot" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
-                                <Image src="/assets/badge-google.png" alt="Google" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
-                                <Image src="/assets/badge-etsy.png" alt="Etsy" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" />
+                                <Image src="/assets/badge-asi.png" alt="ASI" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" priority />
+                                <Image src="/assets/badge-trustpilot.png" alt="Trustpilot" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" priority />
+                                <Image src="/assets/badge-google.png" alt="Google" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" priority />
+                                <Image src="/assets/badge-etsy.png" alt="Etsy" width={100} height={40} className="h-5 md:h-10 w-auto object-contain" priority />
                             </div>
                         </div>
                     </div>

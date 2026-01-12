@@ -127,14 +127,14 @@ export function VideoRevealCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* LAYER 1: Video - preload="auto" for mobile, "metadata" for desktop */}
+      {/* LAYER 1: Video - preload="none" to save bandwidth, load on demand */}
       <video
         ref={videoRef}
         src={videoSrc}
         loop
         muted
         playsInline
-        preload={isTouchDevice ? "auto" : "metadata"}
+        preload="none"
         onLoadedData={() => setIsVideoLoaded(true)}
         onEnded={handleVideoEnd}
         className="absolute inset-0 h-full w-full object-cover"
@@ -147,14 +147,14 @@ export function VideoRevealCard({
           (isHovered && !isTouchDevice) || (isPlaying && isTouchDevice) ? "opacity-0" : "opacity-100"
         )}
       >
-        {/* Next.js Image Component - no priority for below-fold */}
+        {/* Next.js Image Component - priority for hero section */}
         <Image
           src={iconSrc}
           alt={title}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 50vw, 25vw"
-          loading="lazy"
+          priority
         />
 
         {/* Gradient Overlay */}

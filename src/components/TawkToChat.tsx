@@ -4,10 +4,18 @@ import { useEffect } from "react";
 
 export function TawkToChat() {
   useEffect(() => {
-    // Check if already loaded
-    if (typeof window !== "undefined" && (window as any).Tawk_API) {
+    // Only run on client side
+    if (typeof window === "undefined") {
       return;
     }
+
+    // Check if already loaded
+    if ((window as any).Tawk_API) {
+      console.log("Tawk.to already loaded");
+      return;
+    }
+
+    console.log("Loading Tawk.to widget...");
 
     // Initialize Tawk API
     (window as any).Tawk_API = (window as any).Tawk_API || {};
@@ -70,22 +78,37 @@ export function TawkToChat() {
     script.charset = "UTF-8";
     script.setAttribute("crossorigin", "*");
 
+    // Add error handler
+    script.onerror = () => {
+      console.error("Failed to load Tawk.to script");
+    };
+
+    // Insert script into document
     const firstScript = document.getElementsByTagName("script")[0];
-    firstScript.parentNode?.insertBefore(script, firstScript);
+    if (firstScript && firstScript.parentNode) {
+      firstScript.parentNode.insertBefore(script, firstScript);
+    } else {
+      document.body.appendChild(script);
+    }
 
     // Setup auto-popup and referrer tracking once Tawk loads
     script.onload = () => {
+      console.log("Tawk.to script loaded successfully");
       const Tawk_API = (window as any).Tawk_API;
 
-      // Set visitor name before load
-      if (Tawk_API) {
-        const referrerSource = getReferrerSource();
-        Tawk_API.visitor = Tawk_API.visitor || {};
-        Tawk_API.visitor.name = referrerSource;
+      if (!Tawk_API) {
+        console.error("Tawk_API not available after script load");
+        return;
       }
+
+      // Set visitor name before load
+      const referrerSource = getReferrerSource();
+      Tawk_API.visitor = Tawk_API.visitor || {};
+      Tawk_API.visitor.name = referrerSource;
 
       // Wait for Tawk to be fully ready
       Tawk_API.onLoad = function() {
+        console.log("Tawk.to widget fully loaded and ready");
         try {
           // Set visitor attributes with referrer source
           const referrerSource = getReferrerSource();
@@ -95,7 +118,9 @@ export function TawkToChat() {
               'source': referrerSource,
               'traffic_source': referrerSource
             }, function(error: any) {
-              // Silently handle errors
+              if (error) {
+                console.error("Error setting Tawk attributes:", error);
+              }
             });
           }
 
@@ -103,23 +128,27 @@ export function TawkToChat() {
           const hasShownPopup = localStorage.getItem("tawk_popup_shown");
 
           if (!hasShownPopup) {
+            console.log("Scheduling Tawk.to auto-popup in 10 seconds...");
             // Auto-popup after 10 seconds (one time only)
             setTimeout(() => {
               try {
                 if (typeof Tawk_API.isChatMinimized === 'function' && Tawk_API.isChatMinimized()) {
                   if (typeof Tawk_API.maximize === 'function') {
+                    console.log("Auto-maximizing Tawk.to chat widget");
                     Tawk_API.maximize();
                     // Mark as shown
                     localStorage.setItem("tawk_popup_shown", "true");
                   }
                 }
               } catch (e) {
-                // Silently handle popup errors
+                console.error("Error auto-maximizing Tawk.to:", e);
               }
             }, 10000); // 10 seconds
+          } else {
+            console.log("Tawk.to auto-popup already shown before, skipping");
           }
         } catch (e) {
-          // Silently handle any setup errors
+          console.error("Error in Tawk.to onLoad setup:", e);
         }
       };
     };

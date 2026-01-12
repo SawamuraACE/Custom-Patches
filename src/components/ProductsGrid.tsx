@@ -135,6 +135,7 @@ export function ProductsGrid() {
                   fill
                   sizes="(max-width: 768px) 50vw, 300px"
                   className="object-contain transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out"
+                  loading="lazy"
                 />
               </div>
             </div>
