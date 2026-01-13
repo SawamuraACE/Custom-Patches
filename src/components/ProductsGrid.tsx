@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/Button";
 
+// When you replace product images, change this to v2, v3, etc. to force reload
+const IMG_V = "v1";
+
 const PRODUCTS = [
   // --- ROW 1 ---
   {
@@ -11,7 +14,7 @@ const PRODUCTS = [
     title: "Custom Chenille Patches",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#DC2626]",
-    image: "/assets/product-chenille.png",
+    image: `/assets/product-chenille.png?${IMG_V}`,
     width: "lg:w-[532px]",
     isWide: true,
     link: "/custom-patches/custom-chenille-patches",
@@ -21,7 +24,7 @@ const PRODUCTS = [
     title: "Custom PVC Patches",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#1A1A1A]",
-    image: "/assets/product-pvc.png",
+    image: `/assets/product-pvc.png?${IMG_V}`,
     width: "lg:w-[340px]",
     isWide: false,
     link: "/custom-patches/custom-pvc-patches",
@@ -31,7 +34,7 @@ const PRODUCTS = [
     title: "Custom Woven Patches",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#2F4248]",
-    image: "/assets/product-woven.png",
+    image: `/assets/product-woven.png?${IMG_V}`,
     width: "lg:w-[340px]",
     isWide: false,
     link: "/custom-patches/custom-woven-patches",
@@ -43,7 +46,7 @@ const PRODUCTS = [
     title: "Custom Leather Patches",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#261818]",
-    image: "/assets/product-leather.png",
+    image: `/assets/product-leather.png?${IMG_V}`,
     width: "lg:w-[340px]",
     isWide: false,
     link: "/custom-patches/custom-leather-patches",
@@ -53,7 +56,7 @@ const PRODUCTS = [
     title: "Custom Shoes Charm",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#D4A373]",
-    image: "/assets/product-charm.png",
+    image: `/assets/product-charm.png?${IMG_V}`,
     width: "lg:w-[340px]",
     isWide: false,
     link: "/custom-patches/custom-pvc-patches",
@@ -63,7 +66,7 @@ const PRODUCTS = [
     title: "Custom Embroidery Patches",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
     bgColor: "bg-[#22386E]",
-    image: "/assets/product-embroidery.png",
+    image: `/assets/product-embroidery.png?${IMG_V}`,
     width: "lg:w-[532px]",
     isWide: true,
     link: "/custom-patches/custom-embroidered-patches",
