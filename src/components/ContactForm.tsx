@@ -10,7 +10,6 @@ type ContactFormData = {
   lastName: string;
   email: string;
   phone: string;
-  subject: string;
   message: string;
 };
 
@@ -37,7 +36,7 @@ export function ContactForm() {
         },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          subject: `Contact: ${data.subject} from ${data.firstName}`,
+          subject: `Contact Form: ${data.firstName} ${data.lastName}`,
           ...data,
         }),
       });
@@ -130,31 +129,6 @@ export function ContactForm() {
         </div>
       </div>
 
-      {/* Subject Radio Buttons */}
-      <div className="space-y-4">
-        <label className="text-xs font-semibold text-brand-dark uppercase">
-          Select Subject
-        </label>
-        <div className="flex flex-wrap gap-4 md:gap-6">
-          {["General Inquiry", "Wrong Parcel", "Stick Issue", "Other"].map(
-            (subject) => (
-              <label key={subject} className="flex items-center cursor-pointer gap-2">
-                <input
-                  type="radio"
-                  value={subject}
-                  {...register("subject", { required: true })}
-                  className="accent-brand-dark h-4 w-4"
-                />
-                <span className="text-sm text-gray-600">{subject}</span>
-              </label>
-            )
-          )}
-        </div>
-        {errors.subject && (
-          <span className="text-red-500 text-xs">Please select a subject</span>
-        )}
-      </div>
-
       {/* Message */}
       <div className="space-y-2">
         <label className="text-xs font-semibold text-brand-dark uppercase">
@@ -175,7 +149,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-brand-dark hover:bg-black text-white px-8 py-4 h-auto text-sm font-bold uppercase rounded-md shadow-lg disabled:opacity-75 flex items-center gap-2 transition-colors"
+          className="bg-brand-dark hover:bg-brand-orange text-white px-8 py-4 h-auto text-sm font-bold uppercase rounded-md shadow-lg disabled:opacity-75 flex items-center gap-2 transition-colors"
         >
           {isSubmitting ? (
             <>

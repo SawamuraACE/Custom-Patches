@@ -159,7 +159,10 @@ export function ProductPageTemplate({
       {/* MODAL */}
       <Modal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)}>
         <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-white">Get Your Free Quote</h2>
+          <h2 className="text-2xl font-bold">
+            <span className="text-white">Unlock </span>
+            <span className="text-brand-orange">Special Rates</span>
+          </h2>
           <p className="mt-2 text-sm text-gray-400">
             Fill out the details below and attach your design.
           </p>

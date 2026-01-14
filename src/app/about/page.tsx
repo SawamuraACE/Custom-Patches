@@ -196,8 +196,11 @@ export default function AboutUs() {
 
       <Modal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)}>
         <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-brand-dark">Get Your Free Quote</h2>
-          <p className="mt-2 text-sm text-gray-500">
+          <h2 className="text-2xl font-bold">
+            <span className="text-white">Unlock </span>
+            <span className="text-brand-orange">Special Rates</span>
+          </h2>
+          <p className="mt-2 text-sm text-gray-400">
             Fill out the details below and attach your design.
           </p>
         </div>

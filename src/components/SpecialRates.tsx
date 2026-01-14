@@ -190,9 +190,9 @@ export function SpecialRates() {
 
   return (
     <section className="relative bg-white w-full overflow-hidden py-12 md:py-24">
-      
+
       <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto">
-        
+
         {/* LEFT SIDE: "Instant Quote Available" */}
         <div className="w-full lg:w-1/2 px-8 flex flex-col items-center justify-center text-center relative">
 
@@ -220,10 +220,13 @@ export function SpecialRates() {
         {/* RIGHT SIDE: The Dark Form */}
         <div className="w-full lg:w-1/2 bg-[#1A1A1A] p-8 md:p-16 flex flex-col justify-center text-white hide-scrollbar overflow-y-auto">
             <div className="max-w-xl mx-auto w-full">
-                <div className="mb-8 text-center lg:text-left">
-                  <h3 className="text-2xl font-bold uppercase tracking-wider text-white">Unlock Special Rates</h3>
+                <div className="mb-8 text-center">
+                  <h3 className="text-2xl font-bold uppercase tracking-wider">
+                    <span className="text-white">Unlock </span>
+                    <span className="text-brand-orange">Special Rates</span>
+                  </h3>
                 </div>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input 
