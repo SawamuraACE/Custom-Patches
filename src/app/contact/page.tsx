@@ -44,7 +44,7 @@ export default function ContactUs() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <Phone className="h-5 w-5 text-brand-orange" />
-                  <span className="text-sm">+1 012 3456 789</span>
+                  <span className="text-sm">3027738982</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="h-5 w-5 text-brand-orange" />
@@ -53,7 +53,7 @@ export default function ContactUs() {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 text-brand-orange mt-1" />
                   <span className="text-sm leading-relaxed max-w-[200px]">
-                    132 Dartmouth Street Boston, Massachusetts 02156 <span className="text-brand-orange">United States</span>
+                    701 TILLERY ST STE 12 AUSTIN TX 78702 <span className="text-brand-orange">United States</span>
                   </span>
                 </div>
               </div>
