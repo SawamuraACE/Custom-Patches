@@ -22,7 +22,7 @@ interface QueenCTAProps {
 
 export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
   return (
-    <section className="bg-[#EDEBE8] py-12 md:py-24 overflow-hidden">
+    <section className="bg-[#EDEBE8] py-12 md:py-16 overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 relative">
         
         {/* Header */}

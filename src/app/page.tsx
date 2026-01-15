@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
@@ -43,13 +43,18 @@ const BottomCTA = dynamic(() => import("../components/BottomCTA").then(mod => ({
 
 export default function Home() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const productsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToProducts = () => {
+    productsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="min-h-screen bg-white font-sans">
       <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* 1. Hero - Above the fold, loaded immediately */}
-      <Hero onOpenQuote={() => setIsQuoteOpen(true)} />
+      <Hero onOpenQuote={() => setIsQuoteOpen(true)} onSeeAllProducts={scrollToProducts} />
 
       {/* 2. Unlock Special Rates (Dark Form) */}
       <SpecialRates />
@@ -58,7 +63,9 @@ export default function Home() {
       <ValueProps />
 
       {/* 4. Products Grid (Infuse Your Style) */}
-      <ProductsGrid />
+      <div ref={productsRef}>
+        <ProductsGrid />
+      </div>
 
       {/* 5. Process Steps (Patch Quest) */}
       <ProcessSteps />

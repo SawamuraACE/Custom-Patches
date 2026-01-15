@@ -8,6 +8,7 @@ import Link from "next/link";
 
 interface HeroProps {
     onOpenQuote: () => void;
+    onSeeAllProducts: () => void;
 }
 
 // Single featured video for performance
@@ -18,7 +19,7 @@ const FEATURED_VIDEO = {
     videoSrc: "/assets/videos/Sample1.mp4",
 };
 
-export function Hero({ onOpenQuote }: HeroProps) {
+export function Hero({ onOpenQuote, onSeeAllProducts }: HeroProps) {
     return (
         <section className="relative overflow-hidden bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
             {/* Background Pattern */}
@@ -42,7 +43,7 @@ export function Hero({ onOpenQuote }: HeroProps) {
                             <Button size="lg" variant="outline" onClick={onOpenQuote}>
                                 Get Quote
                             </Button>
-                            <Button size="lg" variant="outline">
+                            <Button size="lg" variant="outline" onClick={onSeeAllProducts}>
                                 See All Products
                             </Button>
                         </div>
