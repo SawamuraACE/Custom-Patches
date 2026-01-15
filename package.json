@@ -21,6 +21,7 @@
     "sharp": "^0.34.5",
     "swiper": "^11.2.10",
     "tailwind-merge": "^2.6.0",
+    "yet-another-react-lightbox": "^3.28.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

@@ -12,6 +12,11 @@ import { BottomCTA } from "@/components/BottomCTA";
 import { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
 import { QuoteForm } from "@/components/QuoteForm";
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 interface ProductPageProps {
   title: string;
@@ -37,6 +42,19 @@ export function ProductPageTemplate({
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   // Simple state for active image in gallery
   const [activeImage, setActiveImage] = useState(heroImage);
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  // Combine all images for lightbox
+  const allImages = [heroImage, ...galleryImages];
+  const lightboxSlides = allImages.map((src) => ({ src }));
+
+  const openLightbox = (imageUrl: string) => {
+    const index = allImages.findIndex((img) => img === imageUrl);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <main className="min-h-screen bg-white font-sans">
@@ -52,19 +70,43 @@ export function ProductPageTemplate({
               {/* Thumbnails (Vertical on Desktop, Horizontal on Mobile) */}
               <div className="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible">
                 {[heroImage, ...galleryImages].map((img, idx) => (
-                  <div 
-                    key={idx} 
-                    onClick={() => setActiveImage(img)}
-                    className={`relative w-20 h-20 lg:w-24 lg:h-24 shrink-0 rounded-lg overflow-hidden cursor-pointer border-2 transition-all ${activeImage === img ? 'border-brand-orange' : 'border-gray-200 hover:border-gray-300'}`}
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      setActiveImage(img);
+                      openLightbox(img);
+                    }}
+                    className={`relative w-20 h-20 lg:w-24 lg:h-24 shrink-0 rounded-lg overflow-hidden cursor-pointer border-2 transition-all group ${activeImage === img ? 'border-brand-orange' : 'border-gray-200 hover:border-brand-orange/50'}`}
                   >
-                    <Image src={img} alt="Thumbnail" fill className="object-cover" />
+                    <Image src={img} alt="Thumbnail" fill className="object-cover group-hover:scale-110 transition-transform duration-300" />
+
+                    {/* Zoom Icon Overlay */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
-              
+
               {/* Main Image */}
-              <div className="relative flex-1 aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-                <Image src={activeImage} alt={title} fill className="object-cover" priority />
+              <div
+                onClick={() => openLightbox(activeImage)}
+                className="relative flex-1 aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 cursor-pointer group"
+              >
+                <Image src={activeImage} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" priority />
+
+                {/* Zoom Hint Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-16 h-16 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -169,6 +211,37 @@ export function ProductPageTemplate({
         </div>
         <QuoteForm />
       </Modal>
+
+      {/* Lightbox for Hero Images */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        slides={lightboxSlides}
+        index={lightboxIndex}
+        plugins={[Zoom, Thumbnails]}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          keyboardMoveDistance: 50,
+          wheelZoomDistanceFactor: 100,
+          pinchZoomDistanceFactor: 100,
+          scrollToZoom: true,
+        }}
+        thumbnails={{
+          position: "bottom",
+          width: 120,
+          height: 80,
+          border: 2,
+          borderRadius: 8,
+          padding: 0,
+          gap: 16,
+        }}
+        animation={{ fade: 250 }}
+        controller={{ closeOnBackdropClick: true }}
+      />
     </main>
   );
 }
