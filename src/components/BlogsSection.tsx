@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/Button";
 import Image from "next/image";
+import Link from "next/link";
+import { getFeaturedBlogs } from "@/data/blogs";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,35 +16,9 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const BLOGS = [
-  {
-    id: 1,
-    title: "Custom Patches for Businesses & Personal Use",
-    desc: "Custom patches are an incredible way to make a statement and add personal flair to clothing, hats, bags, and more.",
-    image: "/assets/blog-1.png",
-  },
-  {
-    id: 2,
-    title: "The Ultimate Guide to Custom Patch Backings",
-    desc: "From Iron-on to Velcro, choosing the right backing is crucial for your patch's longevity and application.",
-    image: "/assets/blog-2.png",
-  },
-  {
-    id: 3,
-    title: "Why Embroidery is Timeless",
-    desc: "Explore the history and durability of classic embroidery methods compared to modern printing.",
-    image: "/assets/blog-1.png",
-  },
-  {
-    id: 4,
-    title: "PVC vs Embroidered: Which is Best?",
-    desc: "A deep dive into the pros and cons of different patch materials for outdoor gear.",
-    image: "/assets/blog-2.png",
-  },
-];
-
 export function BlogsSection() {
   const [mounted, setMounted] = useState(false);
+  const blogs = getFeaturedBlogs();
 
   useEffect(() => {
     setMounted(true);
@@ -54,11 +30,11 @@ export function BlogsSection() {
 
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 uppercase tracking-wide">
-            <span className="text-brand-dark">BLOGS & </span>
-            <span className="text-brand-orange">NEWS</span>
+            <span className="text-brand-dark">INDUSTRY INSIGHTS & </span>
+            <span className="text-brand-orange">EXPERT GUIDES</span>
           </h2>
-          <p className="text-gray-500 text-sm md:text-base">
-            Latest news and guides from the patch experts.
+          <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+            Learn from 8+ years of patch manufacturing experience. Our comprehensive guides cover everything clothing brands need to know about custom patches, production efficiency, quality standards, and scaling your apparel line with professional embellishments.
           </p>
         </div>
 
@@ -81,36 +57,43 @@ export function BlogsSection() {
             }}
             className="w-full pb-12"
           >
-            {BLOGS.map((blog) => (
+            {blogs.map((blog) => (
               <SwiperSlide key={blog.id} className="h-auto">
-                <div className="group flex flex-col h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white">
+                <Link href={`/blog/${blog.slug}`}>
+                  <div className="group flex flex-col h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 bg-[#1A1A1A] cursor-pointer">
 
-                  <div className="h-48 md:h-64 w-full relative overflow-hidden bg-gray-100">
-                     <Image
-                       src={blog.image}
-                       alt={blog.title}
-                       fill
-                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                       loading="lazy"
-                     />
-                  </div>
-
-                  <div className="p-6 md:p-8 bg-[#1A1A1A] text-white flex-1 flex flex-col items-start justify-between">
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold mb-3 leading-tight line-clamp-2">
-                        {blog.title}
-                      </h3>
-                      <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3">
-                        {blog.desc}
-                      </p>
+                    <div className="h-48 md:h-64 w-full relative overflow-hidden bg-gray-800">
+                       <Image
+                         src={blog.image}
+                         alt={blog.imageAlt}
+                         fill
+                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                         loading="lazy"
+                       />
+                       {blog.featured && (
+                         <div className="absolute top-4 left-4 bg-brand-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
+                           Featured
+                         </div>
+                       )}
                     </div>
 
-                    <Button className="bg-brand-orange hover:bg-brand-red text-white border-none px-6 rounded-md text-xs font-bold uppercase w-max">
-                      Read More
-                    </Button>
+                    <div className="p-6 md:p-8 bg-[#1A1A1A] text-white flex-1 flex flex-col items-start justify-between">
+                      <div>
+                        <h3 className="text-lg md:text-xl font-bold mb-3 leading-tight line-clamp-2">
+                          {blog.title}
+                        </h3>
+                        <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3">
+                          {blog.excerpt}
+                        </p>
+                      </div>
+
+                      <Button className="bg-brand-orange hover:bg-brand-red text-white border-none px-6 rounded-md text-xs font-bold uppercase w-max">
+                        Read More
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -127,6 +110,15 @@ export function BlogsSection() {
           `}</style>
         </div>
         )}
+
+        {/* View All Blogs Button */}
+        <div className="text-center mt-12">
+          <Link href="/blog">
+            <Button size="lg" className="bg-black text-white hover:bg-brand-orange hover:text-black border-none px-8 font-bold uppercase transition-all duration-300">
+              View All Articles
+            </Button>
+          </Link>
+        </div>
 
       </div>
     </section>

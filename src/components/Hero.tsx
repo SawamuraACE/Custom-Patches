@@ -31,17 +31,33 @@ export function Hero({ onOpenQuote, onSeeAllProducts }: HeroProps) {
                     {/* Left Column: Text Content */}
                     <div className="flex flex-col items-start space-y-6 text-left">
                         <h1 className="text-4xl font-extrabold tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
-                            Unique Custom <br />
-                            Patches <span className="text-transparent bg-clip-text bg-brand-gradient">Tailored for All</span>
+                            Innovative Custom Patches <br />
+                            <span className="text-transparent bg-clip-text bg-brand-gradient">for Growing Brands</span>
                         </h1>
 
-                        <p className="max-w-xl text-lg text-gray-600">
-                            Welcome to Panda Patches, where brand stories are stitched into reality! From company logos to promotional swag, let your brand speak loud and clear with our custom iron-on patches. Crafted with care, delivered with precision – Unfolds your brand story!
+                        <p className="max-w-xl text-lg text-gray-600 leading-relaxed">
+                            Transform your apparel line with premium embroidered, chenille, and PVC patches. Our revolutionary heat press transfer technology delivers professional results in seconds – designed for clothing brands ready to scale.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        {/* USP Badges */}
+                        <div className="flex flex-col gap-3 w-full">
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 bg-brand-orange rounded-full flex-shrink-0"></div>
+                                <span className="text-brand-dark font-semibold">Heat Press Transfer Technology – Apply like a pro, no sewing required</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 bg-brand-orange rounded-full flex-shrink-0"></div>
+                                <span className="text-brand-dark font-semibold">Rush Delivery in 4-7 Days – Keep up with your production schedule</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 bg-brand-orange rounded-full flex-shrink-0"></div>
+                                <span className="text-brand-dark font-semibold">US Quality Standards – Consistent results that match your brand guidelines</span>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-2">
                             <Button size="lg" variant="outline" onClick={onOpenQuote}>
-                                Get Quote
+                                Get Custom Quote
                             </Button>
                             <Button size="lg" variant="outline" onClick={onSeeAllProducts}>
                                 See All Products

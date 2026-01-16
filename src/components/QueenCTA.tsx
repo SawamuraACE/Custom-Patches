@@ -9,7 +9,7 @@ interface QuoteButtonProps {
 
 function QuoteBtn({ onClick }: QuoteButtonProps) {
   return (
-    <Button onClick={onClick} className="bg-[#1A1A1A] hover:bg-black text-white border border-brand-orange/30 px-6 py-2 h-auto text-xs uppercase tracking-widest font-bold mt-4 rounded-none skew-x-[-10deg]">
+    <Button onClick={onClick} className="bg-black text-white hover:bg-brand-orange hover:text-black border border-brand-orange/30 px-6 py-2 h-auto text-xs uppercase tracking-widest font-bold mt-4 rounded-none skew-x-[-10deg] transition-all duration-300">
       <span className="skew-x-[10deg] text-brand-orange mr-2">❝</span>
       <span className="skew-x-[10deg]">Get Quote Now</span>
     </Button>
@@ -24,16 +24,16 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
   return (
     <section className="bg-[#EDEBE8] py-12 md:py-16 overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 relative">
-        
+
         {/* Header */}
         <div className="text-center mb-8 relative z-10">
           <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-4">
-            <span className="text-brand-dark">From Idea to </span>
-            <span className="text-brand-orange">Iron-on Patches: <br/>
-            Your Patch Journey Starts Here!</span>
+            <span className="text-brand-dark">YOUR PRODUCTION PARTNER </span>
+            <span className="text-brand-orange">FROM DESIGN TO <br/>
+            FINISHED PATCHES</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-sm">
-            From sparking ideas to stunning iron-on patches, your patch journey begins here!
+            Four key stages where we handle the complexity so you can focus on growing your clothing brand.
           </p>
         </div>
 
@@ -43,10 +43,10 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
           {/* --- LEFT COLUMN --- */}
           <div className="flex flex-col gap-8 lg:gap-32 text-center lg:text-right order-2 lg:order-1">
              <div className="pt-0 md:pt-24">
-               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Crafting Your Ideal Patch</h3>
-               <p className="text-brand-orange text-xs font-bold uppercase mb-2">We're here to Wow You</p>
+               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Submit Your Design</h3>
+               <p className="text-brand-orange text-xs font-bold uppercase mb-2">Professional Digitization Included</p>
                <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto lg:ml-auto lg:mr-0">
-                 Your satisfaction fuels us. We craft patches with your happiness in mind.
+                 Send us your logo or artwork in any format. Our team digitizes it for optimal patch production with exact specifications.
                </p>
                <div className="flex justify-center lg:justify-end">
                  <QuoteBtn onClick={onOpenQuote} />
@@ -54,10 +54,10 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
              </div>
 
              <div className="pb-0 md:pb-24">
-               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Ring, Ring! Your Patch is Here!</h3>
-               <p className="text-brand-orange text-xs font-bold uppercase mb-2">Get set to be impressed!</p>
+               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Receive Ready Patches</h3>
+               <p className="text-brand-orange text-xs font-bold uppercase mb-2">12 to 14 Days Standard Turnaround</p>
                <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto lg:ml-auto lg:mr-0">
-                 Quality checks, meet delivery magic! Your patch arrives ready for action.
+                 Your heat press ready patches arrive inspected and verified. Apply in 10 to 15 seconds with professional results every time.
                </p>
                <div className="flex justify-center lg:justify-end">
                  <QuoteBtn onClick={onOpenQuote} />
@@ -81,10 +81,10 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
           {/* --- RIGHT COLUMN --- */}
           <div className="flex flex-col gap-8 lg:gap-32 text-center lg:text-left order-3">
              <div className="pt-0 md:pt-24">
-               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Start Your patch Quest!</h3>
-               <p className="text-brand-orange text-xs font-bold uppercase mb-2">Easy, Swift, and Enjoyable</p>
+               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Approve Your Mockup</h3>
+               <p className="text-brand-orange text-xs font-bold uppercase mb-2">Free Revisions Until Perfect</p>
                <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto lg:mx-0">
-                 Excited to order something out-of-the-box? Let's make it happen!
+                 Review your digital mockup with exact thread colors and sizing. We make changes until you approve the final design for production.
                </p>
                <div className="flex justify-center lg:justify-start">
                  <QuoteBtn onClick={onOpenQuote} />
@@ -92,10 +92,10 @@ export function QueenCTA({ onOpenQuote }: QueenCTAProps) {
              </div>
 
              <div className="pb-0 md:pb-24">
-               <h3 className="font-bold text-lg md:text-xl text-brand-dark">The Magic of Production Begins!</h3>
-               <p className="text-brand-orange text-xs font-bold uppercase mb-2">Patching Your Ideas</p>
+               <h3 className="font-bold text-lg md:text-xl text-brand-dark">Production Begins</h3>
+               <p className="text-brand-orange text-xs font-bold uppercase mb-2">US Quality Standards</p>
                <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto lg:mx-0">
-                 Give us a go-ahead and our skilled artisans will swing into action.
+                 Once approved, we manufacture your patches with rigorous quality control. Every patch is inspected to meet commercial apparel standards.
                </p>
                <div className="flex justify-center lg:justify-start">
                  <QuoteBtn onClick={onOpenQuote} />

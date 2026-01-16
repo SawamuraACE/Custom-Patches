@@ -5,8 +5,8 @@ export default function PrintedPatchesPage() {
     <ProductPageTemplate
       // --- SEO & HEADER ---
       title="Custom Printed Patches"
-      subtitle="Photo-Realistic. Unlimited Colors. Gradients."
-      description="When your design is too complex for threads, Printed Patches are the answer. Using dye-sublimation technology, we dye the image directly into the fabric molecules. This allows for photographic quality, fading gradients, and infinite colors without adding any weight or texture. The perfect choice for complex artwork, portraits, and detailed logos."
+      subtitle="Photo-Realistic Quality. Unlimited Colors."
+      description="Achieve photographic detail with custom printed patches using dye-sublimation technology. When your design includes gradients, photographs, or complex color work beyond thread capabilities, printed patches deliver stunning results. The dye fuses directly into fabric fibers for permanent, crack-proof images with unlimited colors. Perfect for portrait patches, complex artwork, memorial pieces, and designs requiring precise color matching. Standard turnaround: 12-14 days. Rush available: 4-7 days."
 
       // --- HERO GALLERY IMAGES ---
       heroImage="/assets/products/printed-hero.png"
@@ -18,31 +18,41 @@ export default function PrintedPatchesPage() {
 
       // --- FEATURES ---
       features={[
-        "Photo-realistic quality (perfect for faces/scenery)",
-        "Unlimited colors and smooth gradients included",
-        "Flat, smooth surface (dye-sublimation process)",
-        "Waterproof and machine washable (Image won't crack)",
-        "Capture tiny details that embroidery cannot",
-        "Available with Merrowed (stitched) borders for a classic look"
+        "Photo-realistic quality captures portraits and complex imagery",
+        "Unlimited colors including smooth gradients and color fades",
+        "Dye-sublimation process prevents cracking or peeling",
+        "Heat press transfer backing available for production efficiency",
+        "Waterproof and machine washable – maintains appearance 50+ cycles",
+        "Capture details impossible with embroidery or woven methods",
+        "Merrowed borders create premium patch appearance",
+        "MOQ as low as 50 units with volume pricing available"
       ]}
 
       // --- FAQS ---
       faqs={[
         {
-          q: "Will the image fade or crack in the wash?",
-          a: "No! Unlike screen printing which sits on top, Dye Sublimation fuses the ink into the fabric fibers. The image is permanent, breathable, and will not crack or peel."
+          q: "When should clothing brands choose printed over embroidered patches?",
+          a: "Choose printed patches when designs include: (1) Photographic elements or portraits, (2) Smooth color gradients or ombré effects, (3) More than 10 colors, (4) Extremely fine details under 1mm. Dye-sublimation has zero color limitations and captures photo-realistic quality that thread-based methods can't achieve – perfect for album cover merch, memorial collections, or highly detailed artwork."
         },
         {
-          q: "Why choose Printed over Woven?",
-          a: "Choose Printed if you have gradients (colors fading into each other) or photographs. Woven patches still use threads, so they can't do smooth gradients. Printed patches have zero limitations on color."
+          q: "Will printed patches fade or crack like screen printing?",
+          a: "No. Unlike screen printing where ink sits on top of fabric, dye-sublimation fuses ink directly into fabric fibers at molecular level. The image becomes part of the fabric itself, making it permanent, breathable, and impossible to crack or peel. Withstands 50+ commercial wash cycles maintaining original vibrancy."
         },
         {
-          q: "Does it look like a patch or a sticker?",
-          a: "It looks like a high-quality patch! We use high-quality twill fabric and finish it with a classic embroidered 'Merrowed' border, so it still has that premium patch feel, just with a sharper image."
+          q: "Can you match exact Pantone or brand colors with printing?",
+          a: "Yes. Dye-sublimation offers precise color matching capabilities superior to thread-based methods. We can match specific Pantone colors, brand guidelines, or even complex photographs. This makes printed patches ideal for brands requiring exact color reproduction across multiple products or maintaining strict brand standards."
         },
         {
-          q: "Can I use a photo from my phone?",
-          a: "Yes! As long as the photo is high resolution, we can print it directly onto a patch. This is very popular for memorials, pet portraits, and album covers."
+          q: "Do printed patches look cheap or like stickers?",
+          a: "Not at all. We use premium twill fabric and finish printed patches with classic embroidered merrowed borders, maintaining traditional patch appearance and quality feel. The only difference is the image printing method – customers typically can't distinguish printed from woven patches at casual glance. Many high-end brands use printed patches for complex designs."
+        },
+        {
+          q: "Can you print from phone photos or low-resolution images?",
+          a: "We need high-resolution images (minimum 300 DPI at final patch size) for best results. Phone photos work if taken in good lighting at high resolution. For low-resolution images, our design team can sometimes recreate or enhance them for an additional fee, but original high-quality artwork always produces superior results."
+        },
+        {
+          q: "What's your turnaround time and pricing?",
+          a: "Standard production is 12-14 days. Printed patches typically cost similarly to embroidered patches despite unlimited colors – the streamlined production process offsets color complexity. MOQs start at 50 units with volume pricing at 100, 500, and 1000+ units. Rush production available in 4-7 days."
         }
       ]}
 

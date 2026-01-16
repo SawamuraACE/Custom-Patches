@@ -46,7 +46,7 @@ export function Footer() {
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
                 { name: "Contact Us", href: "/contact" },
-                { name: "Blogs & News", href: "/#blogs" },
+                { name: "Blogs & Insights", href: "/blog" },
                 { name: "FAQ", href: "/#faq" },
               ].map((link) => (
                 <li key={link.name}>

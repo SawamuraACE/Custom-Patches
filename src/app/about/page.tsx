@@ -28,20 +28,20 @@ const REVIEWS = [
 // --- DATA: TEXT CONTENT ---
 const TEXT_BLOCKS = [
   {
-    title: "More Than Just Patches, We're Patch Partners!",
-    desc: "Welcome to Panda Patches, where we are more than just patch makers – we are your patch partners. For over 8 years, we have woven brand stories into the hearts of customers worldwide. Trusted by businesses, teams, and organizations, we craft top-quality custom patches that leave a lasting impression."
+    title: "Innovation Partners for Ambitious Clothing Brands",
+    desc: "For over 8 years, Panda Patches has pioneered custom patch solutions for the apparel industry. We're not just patch makers – we're innovation partners helping clothing brands, from garage startups to established fashion houses, differentiate their products with premium custom patches. Trusted by hundreds of businesses nationwide, we combine traditional craftsmanship with cutting-edge heat press transfer technology to deliver results that exceed US quality standards."
   },
   {
-    title: "Rooted in Expertise, Stitched with Dedication",
-    desc: "We proudly stand as a division of Custom Patch Pro LLC, a powerhouse in the custom patch industry. This legacy ensures unmatched expertise and craftsmanship in every patch we create. Our skilled artisans infuse passion into every stitch, transforming your patches into more than just fabric – they become symbols of quality and dedication."
+    title: "The Technology That Changed Everything",
+    desc: "Traditional embroidery is beautiful but time-consuming. Direct-to-garment printing lacks durability. We developed a revolutionary third path: embroidered, chenille, and sequin patches on placement tape that heat press onto apparel in seconds. This innovation gives clothing brands the premium aesthetic of direct embroidery with unmatched production efficiency. No sewing machines. No misalignment. No quality inconsistency. Just professional results, every single time."
   },
   {
-    title: "Your Brand Story Sewn to Perfection",
-    desc: "At Panda Patches, we're all about telling your brand's story with style! Imagine your logo or design stitched onto a patch – it's like a mini billboard that speaks volumes about your brand wherever it goes. Whether you're a business, team, or organization, our custom patches are the perfect way to showcase your unique identity and leave a lasting impression. Let's stitch your story together!"
+    title: "Built for B2B: Understanding Your Production Realities",
+    desc: "We understand the pressures of production schedules, quality control, and brand consistency because we've been serving B2B clients exclusively for years. Our infrastructure is designed for clothing brands who need reliable partners. From emerging streetwear labels launching their first collection to corporate apparel programs managing multiple product lines, we provide scalable solutions with standard 12-14 day turnaround or rush delivery in 4-7 days when deadlines are tight."
   },
   {
-    title: "Fast and Flawless Patch-Making Process",
-    desc: "At Panda Patches, we turn your patch ideas into reality with speed and precision. From the initial design concept to the final product, our top-notch patch making services ensure your vision shines through in every stitch. Our advanced production facilities, coupled with a dedication to quality, result in patches that are second to none."
+    title: "Expertise Backed by Custom Patch Pro LLC",
+    desc: "As a proud division of Custom Patch Pro LLC, a powerhouse in the custom patch industry, we bring institutional knowledge and manufacturing excellence to every project. Our skilled production team combines decades of collective experience with state-of-the-art facilities to ensure your patches meet exact specifications. This legacy of expertise means you're not taking a chance on an untested supplier – you're partnering with proven professionals who've delivered millions of patches to satisfied clients."
   }
 ];
 
@@ -115,12 +115,12 @@ export default function AboutUs() {
               {/* Text with Orange Line */}
               <div className="flex border-l-4 border-brand-orange pl-6 py-1">
                 <p className="text-[16px] md:text-[18px] text-gray-600 font-normal leading-relaxed">
-                  Customer satisfaction isn't just a goal; it's our badge of honor. We're not just in the business of creating patches; we're in the business of building relationships. From the initial inquiry to the final delivery, our friendly and knowledgeable team is dedicated to guiding you through every step of the process. Your satisfaction is our top priority, and we're here to ensure a seamless experience from start to finish.
+                  Our state-of-the-art production facility combines advanced embroidery equipment with innovative heat press transfer technology to deliver patches that meet the highest US quality standards. Every patch undergoes rigorous quality control to ensure it matches your brand guidelines perfectly. From digitizing your artwork to final inspection, our experienced production team maintains precision at every step. This commitment to quality has made us the trusted choice for clothing brands nationwide who refuse to compromise on their product standards.
                 </p>
               </div>
-              
+
               <div className="text-gray-400 text-sm italic pt-2">
-                 Where technology meets artistry.
+                 Where innovation meets craftsmanship – producing excellence since 2016.
               </div>
             </div>
 

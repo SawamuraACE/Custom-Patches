@@ -1,13 +1,13 @@
 import { ProductPageTemplate } from "@/components/templates/ProductPageTemplate";
 
-export default function NoBgPvcPage() {
+export default function ThreeDEmbroideryPage() {
   return (
     <ProductPageTemplate
       // --- SEO & HEADER ---
       title="Custom 3D Embroidery Transfer"
-      subtitle="Precision Cut. Modern Aesthetic. Zero Bulk."
-      description="Achieve the cleanest look possible with No Background PVC patches. Unlike traditional patches that sit on a base shape (circle/square), these are die-cut exactly to the outline of your design. Whether it's floating text or a complex logo, the 'No Background' style integrates seamlessly with your gear, making it look like it belongs there."
-      
+      subtitle="Innovative Technology. Direct Embroidery Appearance."
+      description="Experience our revolutionary 3D embroidery transfer technology – the innovation that changes everything for clothing brands. Embroidery is created on special placement tape that heat presses onto garments in 10-15 seconds, looking identical to direct embroidery while dramatically improving production efficiency. No sewing machines. No misalignment. No quality inconsistency. Perfect for clothing brands producing hundreds or thousands of units requiring professional embroidery results with modern production speeds. Standard turnaround: 12-14 days. Rush available: 4-7 days."
+
       // --- HERO GALLERY IMAGES ---
       heroImage="/assets/products/nobg-pvc-hero.png"
       galleryImages={[
@@ -18,31 +18,41 @@ export default function NoBgPvcPage() {
 
       // --- FEATURES ---
       features={[
-        "Die-cut exactly to your logo's shape (No square/circle borders)",
-        "Lightweight and streamlined (Less bulk)",
-        "Waterproof and durable soft rubber",
-        "Ideal for floating text or irregular shapes",
-        "Available with Velcro or Heat Press backing",
-        "Modern, tactical, and high-tech look"
+        "Revolutionary heat press transfer technology for embroidery",
+        "Looks identical to direct embroidery – customers can't tell difference",
+        "Apply patches in 10-15 seconds vs minutes with traditional methods",
+        "Perfect placement consistency across large production runs",
+        "No sewing machines or skilled operators required",
+        "Withstands 50+ commercial wash cycles – US quality standards",
+        "Inspect patches before application – zero defects reach customers",
+        "Dramatically reduce labor costs while maintaining premium quality"
       ]}
 
       // --- FAQS ---
       faqs={[
         {
-          q: "What does 'No Background' mean?",
-          a: "It means we cut the patch exactly to the edge of your design elements. There is no extra material or 'border' shape surrounding your logo. It creates a floating effect."
+          q: "How does 3D embroidery transfer technology work?",
+          a: "We create traditional embroidery on special placement tape backing instead of applying directly to garments. In your production facility, position the patch and use a commercial heat press for 10-15 seconds at 320°F. The placement tape bonds permanently while positioning the embroidery perfectly. Result: direct embroidery appearance with heat press speed and consistency."
         },
         {
-          q: "Are small details possible?",
-          a: "Yes, but there are limits. Since we are cutting rubber, elements usually need to be at least 2mm thick. If your design has floating islands (unconnected parts), we use a thin transparent base to hold them together."
+          q: "Why is this revolutionary for clothing brands?",
+          a: "Traditional direct embroidery requires: specialized machines, skilled operators, individual garment hooping, careful positioning, and 5-10 minutes per placement. Our transfer technology requires: basic heat press, minimal training, 10-15 seconds per placement. You go from producing 6-12 garments per hour to 150+ garments per hour while maintaining premium embroidery quality."
         },
         {
-          q: "Is Velcro available for these?",
-          a: "Yes! We laser-cut the Velcro to match the exact shape of your PVC design, so it sits flush on your gear."
+          q: "Is the durability equivalent to sewn embroidery?",
+          a: "Yes. Our transfer patches undergo the same rigorous wash testing as traditional embroidery and withstand 50+ commercial wash cycles without lifting, degrading, or quality loss. The industrial-strength adhesive creates permanent bonds meeting US manufacturing standards for commercial apparel."
         },
         {
-          q: "What is the minimum order?",
-          a: "No minimums! Whether you need a single prototype or 500 pieces for a unit, we can manufacture it."
+          q: "Can we handle complex designs or multiple colors?",
+          a: "Absolutely. Since we're creating actual embroidery (just on placement tape), there are no design limitations. Complex logos, multiple thread colors (up to 9 colors), various stitch densities – everything traditional embroidery can achieve, transfer embroidery delivers with faster application."
+        },
+        {
+          q: "What production volumes make this technology worthwhile?",
+          a: "Any volume benefits from transfer technology, but it's transformational for brands producing 100+ units per design. The consistency, speed, and labor savings compound dramatically at scale. Many brands producing 1000+ units monthly report 60-70% reduction in application labor costs compared to direct embroidery or sewn patches."
+        },
+        {
+          q: "What equipment do we need in our facility?",
+          a: "Just a commercial heat press (clamshell or swing-away style). Most clothing brands already have heat presses for other applications. If not, commercial heat presses cost $500-2000 depending on size. ROI typically occurs within first 500-1000 units compared to outsourcing direct embroidery or hand-sewing patches."
         }
       ]}
 

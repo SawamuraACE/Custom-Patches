@@ -5,8 +5,8 @@ export default function EmbroideredPatchesPage() {
     <ProductPageTemplate
       // --- 1. SEO & HEADER ---
       title="Custom Embroidered Patches"
-      subtitle="The Classic Look. The Premium Feel."
-      description="Experience the timeless tradition of embroidery. Using high-quality threads stitched onto a durable twill backing, our custom embroidered patches offer a classic, textured look that conveys professionalism and quality. Perfect for uniforms, motorcycle clubs, fashion brands, and military gear. We use high-speed digitized machines to ensure every stitch is precise."
+      subtitle="Premium Quality. Heat Press Efficiency."
+      description="Elevate your clothing line with custom embroidered patches that combine traditional craftsmanship with innovative heat press transfer technology. Our premium embroidered patches deliver the classic 3D textured look your customers expect, while our heat press application method gives your production team the speed and consistency needed to scale. Perfect for clothing brands, corporate apparel programs, and promotional products. Standard turnaround: 12-14 days. Rush available: 4-7 days."
       
       // --- 2. HERO GALLERY IMAGES (The 4 Product Shots) ---
       heroImage="/assets/products/embroidered-hero.png"
@@ -26,35 +26,41 @@ export default function EmbroideredPatchesPage() {
 
       // --- 3. FEATURES (Selling Points) ---
       features={[
-        "Classic 3D textured look and feel",
-        "Durable, washable, and fade-resistant threads",
-        "Available in Iron-on, Velcro, Sew-on, or Adhesive backing",
-        "Up to 9 thread colors included per design",
-        "Merrowed border (classic) or Laser-cut border (complex shapes)",
-        "Perfect for Hats, Jackets, Uniforms, and Bags"
+        "Heat Press Transfer Technology – Apply in seconds, looks like direct embroidery",
+        "Classic 3D textured look with premium thread quality",
+        "Withstands 50+ commercial wash cycles – US quality standards",
+        "Up to 9 thread colors for complex designs",
+        "Merrowed or laser-cut borders for professional finishing",
+        "Perfect placement consistency across large production runs",
+        "MOQ as low as 50 units – ideal for testing new designs",
+        "Rush production available in 4-7 days for tight deadlines"
       ]}
 
       // --- 4. FAQ CONTENT (Specific to Embroidery) ---
       faqs={[
         {
-          q: "What is the difference between Embroidered and Woven patches?",
-          a: "Embroidered patches use thicker thread stitched ONTO a fabric backing, creating a traditional raised feel. Woven patches use thinner threads woven TOGETHER, creating a smooth surface better for tiny details and text."
+          q: "How does heat press transfer technology work for embroidered patches?",
+          a: "Our embroidered patches are created on special placement tape backing. You position the patch on your garment and use a commercial heat press for 10-15 seconds at 320°F. The result looks identical to direct embroidery but applies in seconds instead of minutes, dramatically improving production efficiency for clothing brands."
         },
         {
-          q: "How much detail can I include?",
-          a: "Embroidery is great for bold designs. Text should be at least 0.25 inches tall to be legible. If your design has tiny details or gradients, we might recommend Woven or Printed patches instead."
+          q: "What's the durability compared to sewn-on patches?",
+          a: "Our heat press embroidered patches undergo rigorous wash testing and withstand 50+ commercial wash cycles without lifting or degrading. The industrial-strength adhesive creates permanent bonds equivalent to traditional sewn applications, meeting US quality standards for commercial apparel."
         },
         {
-          q: "What backing options are available?",
-          a: "We offer Iron-on (most popular for DIY), Velcro (Hook & Loop) for tactical gear, Peel & Stick for events, or standard Plastic backing for sew-on application."
+          q: "What's your minimum order quantity for clothing brands?",
+          a: "MOQs start at just 50 units, perfect for testing new designs or limited edition releases. Volume pricing applies at 100, 500, and 1000+ units, helping you scale as your brand grows while keeping initial inventory risk low."
         },
         {
-          q: "Is there a minimum order quantity?",
-          a: "We have NO minimums! You can order 1 patch or 10,000. However, the price per patch drops significantly when you order in bulk (e.g., 50+ pieces)."
+          q: "Can you match our brand's Pantone colors?",
+          a: "Yes, we can match Pantone colors using our comprehensive thread charts with hundreds of color options. We'll provide thread color samples for your approval before production begins to ensure perfect brand consistency across all your patches."
         },
         {
-          q: "How do I apply Iron-On patches?",
-          a: "Set your iron to the hottest setting (no steam). Place the patch, cover with a thin cloth, and press firmly for 30-45 seconds. Flip the garment and press the back for another 20 seconds. Let it cool completely."
+          q: "What turnaround times do you offer?",
+          a: "Standard production is 12-14 days from design approval to delivery. For urgent needs, we offer rush production in 4-7 days. This includes digitization, sampling, full production, quality inspection, and shipping – perfect for keeping up with your production schedule."
+        },
+        {
+          q: "What file format do you need for our logo?",
+          a: "Vector files (AI, EPS, PDF) work best. High-resolution raster images (PNG, JPG at 300+ DPI) are also acceptable. If you only have low-resolution files, our design team can recreate them for a small fee ($75-200 depending on complexity)."
         }
       ]}
     />

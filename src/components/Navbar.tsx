@@ -88,6 +88,13 @@ export function Navbar({ onOpenQuote }: NavbarProps) {
           </div>
 
           <Link
+            href="/blog"
+            className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors"
+          >
+            Blogs & Insights
+          </Link>
+
+          <Link
             href="/contact"
             className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors"
           >
@@ -163,14 +170,22 @@ export function Navbar({ onOpenQuote }: NavbarProps) {
               </div>
 
               <Link
+                href="/blog"
+                onClick={closeMenu}
+                className="block text-base font-medium text-gray-700 hover:text-brand-orange transition-colors py-2"
+              >
+                Blogs & Insights
+              </Link>
+
+              <Link
                 href="/contact"
                 onClick={closeMenu}
                 className="block text-base font-medium text-gray-700 hover:text-brand-orange transition-colors py-2"
               >
                 Contact
               </Link>
-            
-            <button 
+              
+              <button
               onClick={handleQuoteClick}
               className="w-full bg-transparent text-black border-2 border-brand-orange hover:bg-brand-orange hover:text-white transition-colors py-2 px-4 font-bold text-sm rounded-md"
             >

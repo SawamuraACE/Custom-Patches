@@ -3,9 +3,9 @@
 import Image from "next/image";
 
 const STEPS = [
-  { id: 1, title: "Image/Sketch", desc: "Share your vision with us – whether it's a sketch, logo, or just an idea.", image: "/assets/step-sketch.png" },
-  { id: 2, title: "Mockup", desc: "Review our crafted digital mockup; it's your turn to give the green light.", image: "/assets/step-mockup.png" },
-  { id: 3, title: "Patch", desc: "Sit back as we bring your patches to life. From creation to delivery.", image: "/assets/step-patch.png" },
+  { id: 1, title: "Submit Design", desc: "Send us your logo or artwork in any format. Our team digitizes it for optimal patch production.", image: "/assets/step-sketch.png" },
+  { id: 2, title: "Approve Mockup", desc: "Review your digital mockup with exact thread colors and sizing. Changes are free until you approve.", image: "/assets/step-mockup.png" },
+  { id: 3, title: "Receive & Apply", desc: "Get your heat press-ready patches in 12-14 days (rush 4-7 days). Apply in seconds with professional results.", image: "/assets/step-patch.png" },
 ];
 
 export function ProcessSteps() {
@@ -14,11 +14,11 @@ export function ProcessSteps() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 text-center">
         
         <h2 className="text-2xl md:text-4xl font-extrabold uppercase mb-4 tracking-wide">
-          <span className="text-white">Take the First Step on </span>
-          <span className="text-brand-orange">Your Patch Quest!</span>
+          <span className="text-white">FROM CONCEPT TO </span>
+          <span className="text-brand-orange">PRODUCTION-READY PATCHES</span>
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-10 md:mb-16 text-sm md:text-base">
-          Step into an adventure where ordering custom patches is as easy as 1-2-3.
+        <p className="text-gray-300 max-w-2xl mx-auto mb-10 md:mb-16 text-sm md:text-base">
+          Our streamlined process takes your clothing brand from design concept to heat press-ready patches in three simple steps. Professional quality, predictable timelines.
         </p>
 
         <div className="relative grid gap-8 md:gap-12 md:grid-cols-3 max-w-5xl mx-auto">

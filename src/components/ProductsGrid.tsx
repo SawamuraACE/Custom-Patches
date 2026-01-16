@@ -115,10 +115,10 @@ export function ProductsGrid() {
                   </p>
                 </div>
 
-                {/* Button: Reverted to White Box (Figma Style) */}
+                {/* Button: White Box with Black Text, Orange on Hover */}
                 <Link href={product.link}>
                   <Button
-                    className="bg-white text-brand-dark hover:bg-gray-100 border-none font-bold text-xs px-6 h-9 w-max rounded-md"
+                    className="bg-white text-black hover:bg-brand-orange hover:text-white border-none font-bold text-xs px-6 h-9 w-max rounded-md transition-all duration-300"
                     size="sm"
                   >
                     Learn More

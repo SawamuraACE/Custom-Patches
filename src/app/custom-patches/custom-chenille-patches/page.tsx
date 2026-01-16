@@ -5,8 +5,8 @@ export default function ChenillePatchesPage() {
     <ProductPageTemplate
       // --- SEO & HEADER ---
       title="Custom Chenille Patches"
-      subtitle="Bold, Fluffy, and Old-School Cool."
-      description="Bring the classic Varsity look to life with Custom Chenille Patches. Known for their plush, carpet-like texture, these patches are the gold standard for Letterman jackets and retro apparel. They are bold, simple, and incredibly soft to the touch."
+      subtitle="Premium Varsity Aesthetic. Heat Press Efficiency."
+      description="Elevate your streetwear and varsity collections with custom chenille patches featuring signature plush texture. Our innovative heat press transfer technology brings classic chenille craftsmanship to modern production speeds – perfect for clothing brands creating letterman jackets, hoodies, and retro-inspired apparel. The bold, touchable texture customers love, with the production consistency brands need. Standard turnaround: 12-14 days. Rush available: 4-7 days."
 
       // --- HERO GALLERY IMAGES ---
       heroImage="/assets/products/chenille-hero.png"
@@ -18,31 +18,41 @@ export default function ChenillePatchesPage() {
 
       // --- FEATURES ---
       features={[
-        "Signature fluffy 'towel' texture",
-        "Perfect for Varsity Jackets & Hoodies",
-        "Mounted on sturdy felt backing",
-        "Can include embroidery for fine details",
-        "Available in Iron-on or Sew-on",
-        "Best for large, simple shapes (Letters, Mascots)"
+        "Heat Press Transfer Technology for chenille patches – applies in seconds",
+        "Signature raised, velvety chenille texture customers love to touch",
+        "Perfect for streetwear, varsity jackets, hoodies, and retro collections",
+        "Durable felt backing withstands heavy fabric applications",
+        "Can combine chenille with standard embroidery for intricate details",
+        "MOQ as low as 50 units – test designs before scaling",
+        "Ideal for large letters, mascots, and bold statement pieces",
+        "Rush production available in 4-7 days for collection launches"
       ]}
 
       // --- FAQS ---
       faqs={[
         {
-          q: "What is Chenille exactly?",
-          a: "Chenille is a type of yarn that creates a raised, tufted, velvety surface. It looks and feels like a soft carpet or towel. It is most famous for use on Letterman/Varsity jackets."
+          q: "How does heat press transfer work for chenille patches?",
+          a: "Our chenille patches are mounted on heat press placement tape. Using a commercial heat press at 320°F for 10-15 seconds creates a permanent bond. The result maintains the premium chenille texture while dramatically reducing application time compared to traditional sewing – perfect for clothing brands producing hundreds of units."
         },
         {
-          q: "Can I do small detailed designs with Chenille?",
-          a: "No. Chenille yarn is thick, so it works best for large, bold shapes like letters or simple mascots. For tiny details, we combine Chenille with standard Embroidery."
+          q: "What types of designs work best for chenille patches?",
+          a: "Chenille yarn is thick and creates bold, raised texture. It works best for large letters, numbers, simple mascots, and statement graphics. For intricate details within chenille designs, we can combine standard embroidery thread to create contrast and definition."
         },
         {
-          q: "How long do they last?",
-          a: "Chenille patches are very durable, especially when sewn onto heavy garments like wool jackets. They maintain their fluffiness for years if cared for properly."
+          q: "Are chenille patches durable enough for commercial apparel?",
+          a: "Yes. Our chenille patches on heavy felt backing withstand 50+ commercial wash cycles. The chenille maintains its plush appearance and doesn't mat down with proper care. Ideal for letterman jackets, premium hoodies, and varsity-style streetwear."
         },
         {
-          q: "What is the standard backing?",
-          a: "Chenille patches typically come on a stiff felt backing to support the yarn. We can add an iron-on layer, but for heavy jackets, we highly recommend sewing them on."
+          q: "What's your minimum order quantity?",
+          a: "MOQs start at 50 units, allowing clothing brands to test chenille patches in limited collections before committing to large production runs. Volume pricing applies at 100, 500, and 1000+ units."
+        },
+        {
+          q: "Can you match specific chenille yarn colors?",
+          a: "Yes. We stock a wide range of chenille yarn colors and can match your brand palette. We'll provide color samples for approval before production to ensure consistency across your entire collection."
+        },
+        {
+          q: "What turnaround time should we expect?",
+          a: "Standard production is 12-14 days from design approval. For urgent collection launches or restocks, we offer rush production in 4-7 days. This includes digitization, sampling, production, quality inspection, and shipping."
         }
       ]}
 
