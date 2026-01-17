@@ -27,6 +27,7 @@ interface ProductPageProps {
   features: string[];
   faqs: { q: string; a: string }[];
   masterpieceImages: string[];
+  relatedBlogPosts?: { title: string; url: string; description: string }[];
 }
 
 export function ProductPageTemplate({
@@ -37,7 +38,8 @@ export function ProductPageTemplate({
   galleryImages,
   features,
   faqs,
-  masterpieceImages
+  masterpieceImages,
+  relatedBlogPosts
 }: ProductPageProps) {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   // Simple state for active image in gallery
@@ -172,6 +174,34 @@ export function ProductPageTemplate({
 
       {/* --- REUSE: SPECIAL RATES (Lead Gen) --- */}
       <SpecialRates />
+
+      {/* --- RELATED BLOG POSTS SECTION --- */}
+      {relatedBlogPosts && relatedBlogPosts.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-3xl font-bold text-center text-brand-dark mb-12">Learn More</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {relatedBlogPosts.map((post, idx) => (
+                <a
+                  key={idx}
+                  href={post.url}
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow border-l-4 border-brand-orange group"
+                >
+                  <h3 className="font-bold text-xl text-brand-dark mb-3 group-hover:text-brand-orange transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {post.description}
+                  </p>
+                  <span className="inline-block mt-4 text-brand-orange font-semibold text-sm group-hover:underline">
+                    Read Article →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* --- FAQ SECTION (Specific to Product) --- */}
       <section className="py-20">

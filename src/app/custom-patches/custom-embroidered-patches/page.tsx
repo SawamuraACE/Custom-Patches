@@ -63,6 +63,19 @@ export default function EmbroideredPatchesPage() {
           a: "Vector files (AI, EPS, PDF) work best. High-resolution raster images (PNG, JPG at 300+ DPI) are also acceptable. If you only have low-resolution files, our design team can recreate them for a small fee ($75-200 depending on complexity)."
         }
       ]}
+
+      relatedBlogPosts={[
+        {
+          title: "PVC vs Embroidered Patches: Which Is Best for Your Brand?",
+          url: "/blog/pvc-vs-embroidered-patches-comparison",
+          description: "Detailed comparison of PVC and embroidered patches covering durability testing, cost analysis, and best use cases to help you make the right material choice."
+        },
+        {
+          title: "Complete Guide to Custom Embroidered Patches",
+          url: "/blog/custom-embroidered-patches-complete-guide-2026",
+          description: "Everything you need to know about custom embroidered patches for clothing brands, from design to production to pricing."
+        }
+      ]}
     />
   );
 }

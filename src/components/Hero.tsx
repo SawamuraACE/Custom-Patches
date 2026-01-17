@@ -30,9 +30,9 @@ export function Hero({ onOpenQuote, onSeeAllProducts }: HeroProps) {
 
                     {/* Left Column: Text Content */}
                     <div className="flex flex-col items-start space-y-6 text-left">
-                        <h1 className="text-4xl font-extrabold tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
-                            Innovative Custom Patches <br />
-                            <span className="text-transparent bg-clip-text bg-brand-gradient">for Growing Brands</span>
+                        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                            <span className="text-brand-orange">Custom Patches</span> <br />
+                            <span className="text-brand-dark">That Scale With Your Brand</span>
                         </h1>
 
                         <p className="max-w-xl text-lg text-gray-600 leading-relaxed">
