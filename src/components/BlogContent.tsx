@@ -1,6 +1,7 @@
 "use client";
 
 import { BlogPost } from "@/types/blog";
+import DOMPurify from "dompurify";
 
 interface BlogContentProps {
   content: string;
@@ -8,11 +9,14 @@ interface BlogContentProps {
 }
 
 export function BlogContent({ content, post }: BlogContentProps) {
+  // Sanitize the HTML content to prevent XSS attacks
+  const sanitizedContent = DOMPurify.sanitize(content);
+
   return (
     <div className="prose prose-lg max-w-none">
       <div
         className="blog-content"
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
       />
 
       <style jsx global>{`
