@@ -279,7 +279,9 @@ export function SpecialRates() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="relative">
+                      <label htmlFor="sr-patchType" className="sr-only">Patch Type</label>
                       <select
+                        id="sr-patchType"
                         name="patchType"
                         value={formData.patchType}
                         onChange={handleInputChange}
@@ -298,7 +300,9 @@ export function SpecialRates() {
                       </select>
                     </div>
                     <div className="relative">
+                      <label htmlFor="sr-backing" className="sr-only">Backing Type</label>
                       <select
+                        id="sr-backing"
                         name="backing"
                         value={formData.backing}
                         onChange={handleInputChange}
@@ -333,7 +337,7 @@ export function SpecialRates() {
                         : "border-gray-600 bg-[#222] hover:bg-[#2a2a2a]"
                     }`}
                   >
-                    <input {...getInputProps()} />
+                    <input {...getInputProps()} aria-label="Upload design file (SVG, PNG, JPG or PDF)" />
                     <div className="flex flex-col items-center gap-2">
                       <div className="h-10 w-10 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange">
                         <Upload className="h-5 w-5" />

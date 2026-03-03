@@ -164,7 +164,9 @@ export function QuoteForm() {
           {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
         </div>
         <div className="space-y-2">
+          <label htmlFor="quote-category" className="sr-only">Patch Type</label>
           <select
+            id="quote-category"
             {...register("category")}
             className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
           >
@@ -195,7 +197,9 @@ export function QuoteForm() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-2">
+          <label htmlFor="quote-backing" className="sr-only">Backing Type</label>
           <select
+            id="quote-backing"
             {...register("backing")}
             className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
           >
@@ -224,7 +228,7 @@ export function QuoteForm() {
           errors.file && "border-red-500"
         )}
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()} aria-label="Upload design file (SVG, PNG, JPG or PDF)" />
         <Upload className="mb-1 h-6 w-6 text-gray-500" />
         {file ? (
           <p className="text-sm font-medium text-white">{(file as File).name}</p>

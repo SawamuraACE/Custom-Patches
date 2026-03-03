@@ -55,7 +55,7 @@ const PRODUCTS = [
     id: 5,
     title: "Custom Shoes Charm",
     desc: "Transform your designs into vibrant masterpieces with custom embroidered patches. Timeless classics, everyone's favorite choice!",
-    bgColor: "bg-[#D4A373]",
+    bgColor: "bg-[#7D4510]",
     image: `/assets/product-charm.png?${IMG_V}`,
     width: "lg:w-[340px]",
     isWide: false,
@@ -110,7 +110,7 @@ export function ProductsGrid() {
                   <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight">
                     {product.title}
                   </h3>
-                  <p className="text-[13px] leading-relaxed opacity-90 font-light">
+                  <p className="text-[13px] leading-relaxed font-normal">
                     {product.desc}
                   </p>
                 </div>

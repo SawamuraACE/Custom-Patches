@@ -13,13 +13,13 @@ const config: Config = {
       },
       colors: {
         brand: {
-          orange: "#FF4D15",
-          red: "#D9280B",
+          orange: "#C03800",
+          red: "#A02E00",
           dark: "#1A1A1A",
         },
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(90deg, #FF4D15 0%, #D9280B 100%)",
+        "brand-gradient": "linear-gradient(90deg, #C03800 0%, #A02E00 100%)",
       },
     },
   },

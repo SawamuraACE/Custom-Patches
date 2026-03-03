@@ -174,11 +174,13 @@ export function VideoRevealCard({
       {isTouchDevice && !isPlaying && (
         <button
           onClick={handlePlayClick}
+          aria-label="Play video"
           className="absolute inset-0 z-40 flex items-center justify-center bg-black/20 active:bg-black/40 transition-all duration-300"
         >
           <Play
             className="w-16 h-16 text-white drop-shadow-lg active:scale-110 transition-transform"
             fill="currentColor"
+            aria-hidden="true"
           />
         </button>
       )}

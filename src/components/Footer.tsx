@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -13,9 +14,11 @@ export function Footer() {
           {/* COLUMN 1: Brand & Socials */}
           <div className="space-y-6">
             <Link href="/">
-                <img 
-                src="/assets/logo.png" 
-                alt="My Custom Patches" 
+                <Image
+                src="/assets/logo.png"
+                alt="My Custom Patches"
+                width={160}
+                height={64}
                 className="h-16 w-auto object-contain -ml-2"
                 />
             </Link>
@@ -26,13 +29,13 @@ export function Footer() {
             {/* Social Icons - Industry Standard for Trust */}
             <div className="flex gap-4">
               {[
-                { Icon: Facebook, url: "#" },
-                { Icon: Instagram, url: "https://www.instagram.com/mycustompatches/" },
-                { Icon: Twitter, url: "#" },
-                { Icon: Linkedin, url: "#" },
-              ].map(({ Icon, url }, i) => (
-                <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-brand-orange hover:text-white transition-all duration-300">
-                  <Icon className="h-4 w-4" />
+                { Icon: Facebook, url: "#", label: "Facebook" },
+                { Icon: Instagram, url: "https://www.instagram.com/mycustompatches/", label: "Instagram" },
+                { Icon: Twitter, url: "#", label: "Twitter" },
+                { Icon: Linkedin, url: "#", label: "LinkedIn" },
+              ].map(({ Icon, url, label }, i) => (
+                <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label={label} className="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-brand-orange hover:text-white transition-all duration-300">
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -114,14 +117,14 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} My Custom Patches. All rights reserved.
           </p>
-          
+
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-xs text-gray-400 hover:text-brand-orange">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="text-xs text-gray-400 hover:text-brand-orange">Terms of Service</Link>
-            <Link href="#" className="text-xs text-gray-400 hover:text-brand-orange">Sitemap</Link>
+            <Link href="/privacy-policy" className="text-xs text-gray-500 hover:text-brand-orange">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-xs text-gray-500 hover:text-brand-orange">Terms of Service</Link>
+            <Link href="#" className="text-xs text-gray-500 hover:text-brand-orange">Sitemap</Link>
           </div>
         </div>
 
