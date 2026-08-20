@@ -72,13 +72,13 @@ export default function BlogPostPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-sm text-gray-600 overflow-x-auto">
               <Link href="/" className="hover:text-brand-orange transition-colors whitespace-nowrap">Home</Link>
-              <span className="flex-shrink-0">/</span>
+              <span className="shrink-0">/</span>
               <Link href="/blog" className="hover:text-brand-orange transition-colors whitespace-nowrap">Blog</Link>
-              <span className="flex-shrink-0">/</span>
+              <span className="shrink-0">/</span>
               <Link href={`/blog?category=${post.category}`} className="hover:text-brand-orange transition-colors whitespace-nowrap">
                 {category?.name}
               </Link>
-              <span className="flex-shrink-0">/</span>
+              <span className="shrink-0">/</span>
               <span className="text-brand-dark font-medium truncate">{post.title}</span>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function BlogPostPage() {
             {/* Author Bio */}
             <div className="mt-12 p-6 bg-gray-50 rounded-xl border border-gray-200">
               <div className="flex items-start gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                   <Image
                     src={post.author.avatar}
                     alt={post.author.name}
@@ -208,7 +208,7 @@ export default function BlogPostPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 {relatedPosts.map((relatedPost) => (
                   <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
-                    <article className="group h-full flex flex-col bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-800">
+                    <article className="group h-full flex flex-col bg-brand-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-800">
                       <div className="relative h-48 w-full overflow-hidden bg-gray-800">
                         <Image
                           src={relatedPost.image}

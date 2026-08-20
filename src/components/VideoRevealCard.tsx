@@ -158,13 +158,13 @@ export function VideoRevealCard({
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
       </div>
 
       {/* LAYER 3: "Hover to Play" hint (Desktop Only - shows when NOT hovered) */}
       {!isTouchDevice && !isHovered && (
         <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
-          <span className="text-sm font-medium text-white bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">
+          <span className="text-sm font-medium text-white bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-xs">
             Hover to Play
           </span>
         </div>

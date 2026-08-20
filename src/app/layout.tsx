@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { TawkToChat } from "@/components/TawkToChat";
+import { balgin, mouseMemoirs } from "./fonts";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${balgin.variable} ${mouseMemoirs.variable}`}>
       <head>
         {/* Meta Pixel Code */}
         <Script
@@ -60,7 +61,7 @@ export default function RootLayout({
         {/* End Meta Pixel Code */}
       </head>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-white text-gray-900`}
+        className="font-sans antialiased bg-white text-gray-900"
         suppressHydrationWarning
       >
         <TawkToChat />

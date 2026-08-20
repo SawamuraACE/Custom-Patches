@@ -80,7 +80,7 @@ export function ContactForm() {
           </label>
           <input
             {...register("firstName", { required: true })}
-            className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
+            className="w-full border-b border-gray-300 py-2 focus:outline-hidden focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
             placeholder="John"
           />
           {errors.firstName && (
@@ -93,7 +93,7 @@ export function ContactForm() {
           </label>
           <input
             {...register("lastName", { required: true })}
-            className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
+            className="w-full border-b border-gray-300 py-2 focus:outline-hidden focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
             placeholder="Doe"
           />
           {errors.lastName && (
@@ -111,7 +111,7 @@ export function ContactForm() {
           <input
             {...register("email", { required: true })}
             type="email"
-            className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
+            className="w-full border-b border-gray-300 py-2 focus:outline-hidden focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
             placeholder="john@example.com"
           />
           {errors.email && <span className="text-red-500 text-xs">Required</span>}
@@ -123,7 +123,7 @@ export function ContactForm() {
           <input
             {...register("phone")}
             type="tel"
-            className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
+            className="w-full border-b border-gray-300 py-2 focus:outline-hidden focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400"
             placeholder="+1 012 3456 789"
           />
         </div>
@@ -136,7 +136,7 @@ export function ContactForm() {
         </label>
         <textarea
           {...register("message", { required: true })}
-          className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400 min-h-[80px] resize-none"
+          className="w-full border-b border-gray-300 py-2 focus:outline-hidden focus:border-brand-orange transition-colors bg-transparent placeholder:text-gray-400 min-h-[80px] resize-none"
           placeholder="Write your message.."
         />
         {errors.message && (

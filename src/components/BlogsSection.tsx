@@ -60,7 +60,7 @@ export function BlogsSection() {
             {blogs.map((blog) => (
               <SwiperSlide key={blog.id} className="h-auto">
                 <Link href={`/blog/${blog.slug}`}>
-                  <div className="group flex flex-col h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 bg-[#1A1A1A] cursor-pointer">
+                  <div className="group flex flex-col h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 bg-brand-dark cursor-pointer">
 
                     <div className="h-48 md:h-64 w-full relative overflow-hidden bg-gray-800">
                        <Image
@@ -78,7 +78,7 @@ export function BlogsSection() {
                        )}
                     </div>
 
-                    <div className="p-6 md:p-8 bg-[#1A1A1A] text-white flex-1 flex flex-col items-start justify-between">
+                    <div className="p-6 md:p-8 bg-brand-dark text-white flex-1 flex flex-col items-start justify-between">
                       <div>
                         <h3 className="text-lg md:text-xl font-bold mb-3 leading-tight line-clamp-2">
                           {blog.title}

@@ -24,7 +24,7 @@ export default function BlogPage() {
       <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* Hero Section */}
-      <section className="pt-40 pb-16 text-center bg-gradient-to-br from-brand-dark via-gray-900 to-black relative overflow-hidden">
+      <section className="pt-40 pb-16 text-center bg-linear-to-br from-brand-dark via-gray-900 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,77,21,0.1),transparent_50%)]" />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight mb-6">
@@ -79,7 +79,7 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
                 <Link key={post.id} href={`/blog/${post.slug}`}>
-                  <article className="group h-full flex flex-col bg-[#1A1A1A] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 hover:-translate-y-1">
+                  <article className="group h-full flex flex-col bg-brand-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 hover:-translate-y-1">
                     {/* Image */}
                     <div className="relative h-56 w-full overflow-hidden bg-gray-800">
                       <Image
@@ -139,7 +139,7 @@ export default function BlogPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-dark to-gray-900 text-white">
+      <section className="py-16 bg-linear-to-r from-brand-dark to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Start Your <span className="text-brand-orange">Patch Project?</span>

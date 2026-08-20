@@ -32,7 +32,7 @@ export default function ContactUs() {
         <div className="max-w-[1100px] mx-auto bg-white rounded-2xl shadow-2xl p-2 md:p-3 flex flex-col md:flex-row overflow-hidden border border-gray-100">
           
           {/* LEFT SIDE: Black Info Card */}
-          <div className="bg-[#1A1A1A] text-white p-8 md:p-10 rounded-xl md:w-[40%] flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-brand-dark text-white p-8 md:p-10 rounded-xl md:w-[40%] flex flex-col justify-between relative overflow-hidden">
             {/* Background Circles for decoration */}
             <div className="absolute bottom-[-50px] right-[-50px] w-32 h-32 bg-white/10 rounded-full" />
             <div className="absolute bottom-[20px] right-[-80px] w-20 h-20 bg-white/10 rounded-full" />

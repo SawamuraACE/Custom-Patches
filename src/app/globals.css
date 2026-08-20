@@ -1,22 +1,88 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --font-poppins: "Poppins", sans-serif;
+@theme {
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-display: var(--font-balgin), sans-serif;
+  --font-mouse: var(--font-mouse-memoirs), sans-serif;
+
+  --color-brand-orange: #c03800;
+  --color-brand-red: #a02e00;
+  --color-brand-dark: #1a1a1a;
+
+  /* New brand system (2026 redesign) */
+  --color-brand-blue: #314aef;
+  --color-brand-blue-light: #6a7cf3;
+  --color-brand-mint: #32f39a;
+  --color-brand-lime: #d6f2a5;
+
+  --background-image-brand-gradient: linear-gradient(
+    90deg,
+    #c03800 0%,
+    #a02e00 100%
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility animate-in {
+  animation-duration: 150ms;
+  animation-fill-mode: forwards;
+}
+
+@utility fade-in {
+  animation-name: fadeIn;
+}
+
+@utility zoom-in-95 {
+  animation-name: zoomIn95;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@utility animate-pulse-slow {
+  /* ✅ THE FADE LOOP (Breathing Effect) */
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@utility animate-arrow-pulse {
+  /* Arrow Pulse Animation (Appear & Disappear with pointing effect) */
+  animation: arrow-pulse 2s ease-in-out infinite;
+}
+
+@utility hide-scrollbar {
+  /* Hide scrollbars on specific elements while keeping page scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @layer utilities {
-  .animate-in {
-    animation-duration: 150ms;
-    animation-fill-mode: forwards;
+  :root {
+    --font-poppins: 'Poppins', sans-serif;
   }
-  .fade-in {
-    animation-name: fadeIn;
-  }
-  .zoom-in-95 {
-    animation-name: zoomIn95;
-  }
+}
+
+@layer utilities {
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -25,28 +91,15 @@
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
   }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
   @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
   }
-  
-  /* ✅ THE FADE LOOP (Breathing Effect) */
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
 
   @keyframes pulse-slow {
     0%, 100% { opacity: 0.2; } /* Almost invisible */
     50% { opacity: 1; }        /* Fully visible */
-  }
-
-  /* Arrow Pulse Animation (Appear & Disappear with pointing effect) */
-  .animate-arrow-pulse {
-    animation: arrow-pulse 2s ease-in-out infinite;
   }
 
   @keyframes arrow-pulse {
@@ -60,21 +113,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #E91E63 0%, #FF8C00 100%);
+    background: linear-gradient(to bottom, #314AEF 0%, #32F39A 100%);
     border: 2px solid #0a0a0a;
     border-radius: 20px;
   }
 
   ::-webkit-scrollbar-track {
     background: transparent;
-  }
-
-  /* Hide scrollbars on specific elements while keeping page scrollbar */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
 }

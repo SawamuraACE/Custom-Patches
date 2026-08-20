@@ -8,7 +8,7 @@ interface BottomCTAProps {
 
 export function BottomCTA({ onOpenQuote }: BottomCTAProps) {
   return (
-    <section className="bg-[#1A1A1A] py-24 text-center">
+    <section className="bg-brand-dark py-24 text-center">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-wide leading-tight mb-6">
           GET CREATIVE WITH MY CUSTOM <br />

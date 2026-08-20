@@ -97,7 +97,7 @@ export function ProductPageTemplate({
               {/* Main Image */}
               <div
                 onClick={() => openLightbox(activeImage)}
-                className="relative flex-1 aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 cursor-pointer group"
+                className="relative flex-1 aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden shadow-2xl bg-gray-100 cursor-pointer group"
               >
                 <Image src={activeImage} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" priority />
 

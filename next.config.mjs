@@ -20,6 +20,13 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
       },
     ],
+
+    // Allow local /public/assets images, including the manual "?vN" cache-busting query string
+    localPatterns: [
+      {
+        pathname: "/assets/**",
+      },
+    ],
   },
 
   // Enable React strict mode

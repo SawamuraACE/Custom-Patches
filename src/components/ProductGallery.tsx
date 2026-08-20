@@ -81,7 +81,7 @@ export function ProductGallery({ images }: ProductGalleryProps) {
             <SwiperSlide key={idx}>
               <div
                 onClick={() => openLightbox(idx)}
-                className="relative aspect-square rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-sm hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 group cursor-pointer"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-xs hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 group cursor-pointer"
               >
                 {/* Full Image Display */}
                 <div className="absolute inset-0 flex items-center justify-center bg-white">

@@ -1,0 +1,108 @@
+- generic [active] [ref=f105e1]:
+  - main [ref=f105e2]:
+    - navigation [ref=f105e3]:
+      - generic [ref=f105e4]:
+        - link "MY CUSTOM PATCHES" [ref=f105e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f105e6]: MY CUSTOM
+          - generic [ref=f105e7]: PATCHES
+        - generic [ref=f105e8]:
+          - button "Chat Now" [ref=f105e9]
+          - button "Toggle menu" [ref=f105e12]: Menu
+      - generic:
+        - list:
+          - listitem:
+            - link "Custom Patches":
+              - /url: /custom-patches
+          - listitem:
+            - link "About Us":
+              - /url: /about
+          - listitem:
+            - link "Blogs & Insights":
+              - /url: /blog
+          - listitem:
+            - link "Contact Us":
+              - /url: /contact
+        - button "Get Instant Quote"
+        - paragraph: EST. 2014 · Austin, United States
+    - generic [ref=f105e14]:
+      - generic: PATCHES
+      - generic [ref=f105e15]:
+        - generic [ref=f105e16]: CUSTOM
+        - img "Examples of custom embroidered, chenille and PVC patches" [ref=f105e18]
+        - generic [ref=f105e19]:
+          - paragraph [ref=f105e20]: From embroidered to PVC, woven, chenille and leather.Every patch type, any quantity, delivered in 12–14 days (rush 4–7 days).Free digital mockup included. No setup fees.
+          - generic [ref=f105e21]:
+            - paragraph [ref=f105e22]: Rated 4.7/5 by 75+ customers on Trustpilot.
+            - generic [ref=f105e23]:
+              - img "ASI" [ref=f105e24]
+              - img "Trustpilot" [ref=f105e25]
+              - img "Google" [ref=f105e26]
+              - img "Etsy" [ref=f105e27]
+        - generic [ref=f105e28]:
+          - button "Get Custom Quote" [ref=f105e29]
+          - button "See All Products" [ref=f105e30]
+    - generic [ref=f105e40]:
+      - link [ref=f105e41] [cursor=pointer]:
+        - /url: /
+        - heading "MY CUSTOM PATCHES!" [level=2] [ref=f105e42]: MY CUSTOMPATCHES!
+      - generic [ref=f105e43]:
+        - generic [ref=f105e44]:
+          - heading "Our Patches" [level=3] [ref=f105e45]
+          - list [ref=f105e46]:
+            - listitem [ref=f105e47]:
+              - link "Custom Embroidered Patches" [ref=f105e48] [cursor=pointer]:
+                - /url: /custom-patches/custom-embroidered-patches
+            - listitem [ref=f105e49]:
+              - link "Custom Chenille Patches" [ref=f105e50] [cursor=pointer]:
+                - /url: /custom-patches/custom-chenille-patches
+            - listitem [ref=f105e51]:
+              - link "Custom PVC Patches" [ref=f105e52] [cursor=pointer]:
+                - /url: /custom-patches/custom-pvc-patches
+            - listitem [ref=f105e53]:
+              - link "Custom Woven Patches" [ref=f105e54] [cursor=pointer]:
+                - /url: /custom-patches/custom-woven-patches
+            - listitem [ref=f105e55]:
+              - link "Custom Leather Patches" [ref=f105e56] [cursor=pointer]:
+                - /url: /custom-patches/custom-leather-patches
+            - listitem [ref=f105e57]:
+              - link "Custom Printed Patches" [ref=f105e58] [cursor=pointer]:
+                - /url: /custom-patches/custom-printed-patches
+        - generic [ref=f105e59]:
+          - heading "Company" [level=3] [ref=f105e60]
+          - list [ref=f105e61]:
+            - listitem [ref=f105e62]:
+              - link "About Us" [ref=f105e63] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f105e64]:
+              - link "Blogs & Insights" [ref=f105e65] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f105e66]:
+              - link "Contact Us" [ref=f105e67] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f105e68]:
+              - link "FAQ" [ref=f105e69] [cursor=pointer]:
+                - /url: /#faq
+        - generic [ref=f105e70]:
+          - heading "Get In Touch" [level=3] [ref=f105e71]
+          - list [ref=f105e72]:
+            - listitem [ref=f105e73]: admin@mycustompatches.com
+            - listitem [ref=f105e74]: 302-773-8982
+            - listitem [ref=f105e75]: 701 Tillery St Ste 12, Austin TX 78702
+          - generic [ref=f105e76]:
+            - link "Facebook" [ref=f105e77] [cursor=pointer]:
+              - /url: "#"
+            - link "Instagram" [ref=f105e80] [cursor=pointer]:
+              - /url: https://www.instagram.com/mycustompatches/
+            - link "Twitter" [ref=f105e84] [cursor=pointer]:
+              - /url: "#"
+            - link "LinkedIn" [ref=f105e87] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f105e92]:
+        - paragraph [ref=f105e93]: © 2026 My Custom Patches. All rights reserved.
+        - generic [ref=f105e94]:
+          - link "Privacy Policy" [ref=f105e95] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=f105e96] [cursor=pointer]:
+            - /url: /terms-of-service
+  - button "Open Next.js Dev Tools" [ref=f105e102] [cursor=pointer]
